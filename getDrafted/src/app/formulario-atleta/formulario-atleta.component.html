@@ -1,0 +1,67 @@
+<div class="container">
+    <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre">
+            <!-- <p class="error"
+                *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
+                El campo nombre es requerido
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
+                El campo nombre debe tener máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
+                caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}}
+                caracteres.
+            </p> -->
+        </div>
+        <div class="form-group">
+            <label for="">Apellidos</label>
+            <input type="text" class="form-control" formControlName="apellidos">
+        </div>
+        <div class="form-group">
+            <label for="">Edad</label>
+            <input type="text" class="form-control" formControlName="edad">
+        </div>
+        <div class="form-group">
+            <label for="">Sexo</label>
+            <select type="text" class="form-control" formControlName="sexo">
+                <option value="M">Hombre</option>
+                <option value="F">Mujer</option>
+                <option value="NA">Prefiero no elegir</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Pais</label>
+            <select type="text" class="form-control" formControlName="pais">
+                <option value="spain">España</option>
+                <option value="usa">EE.UU</option>
+                <option value="vzla">Venezuela</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Disciplina</label>
+            <select type="text" class="form-control" formControlName="disci">
+                <option value="cf">CrossFit</option>
+                <option value="wl">Halterofilia</option>
+                <option value="swim">Natacion</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="">Telefono</label>
+            <input type="text" class="form-control" formControlName="tel">
+        </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="form-group">
+            <label for="">Repite Password</label>
+            <input type="password" class="form-control" formControlName="password_repeat">
+        </div>
+        <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-block btn-primary">
+    </form>
+</div>
