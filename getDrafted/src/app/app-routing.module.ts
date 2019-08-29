@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormularioAtletaComponent } from './formulario-atleta/formulario-atleta.component';
 import { LandingComponent } from './landing/landing.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingComponent },
-  { path: 'registro-atleta', component: FormularioAtletaComponent }
-  // { path: 'about/:name/:surname', component: AboutComponent},
+  { path: 'registro-atleta', component: FormularioAtletaComponent },
+  { path: 'atleta/:userid', component: UserProfileComponent}
   // { path: 'info', component: ContactComponent },
   // { path: 'contact', component: ContactComponent },
   // { path: 'pricing', component: PricingComponent, canActivate: [TestGuard] },

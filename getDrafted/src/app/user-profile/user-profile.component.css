@@ -1,0 +1,20 @@
+*{
+    color: white;
+}
+div.container-fluid{
+    background-image: url('https://images.pexels.com/photos/2131841/pexels-photo-2131841.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    background-size: cover;
+    background-position: center center;
+    height: 20vh;
+}
+.perfil-pic-container img{
+    border-radius: 50%;
+    position: relative;
+    top: 100%;
+    max-width: 10%;
+    max-height: 10%;
+}
+h3.nombre-atleta{
+    display: inline-block;
+    margin-left: 3vh;
+}
