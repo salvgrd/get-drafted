@@ -10,6 +10,7 @@ import { HeroComponent } from './hero/hero.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormularioAtletaComponent } from './formulario-atleta/formulario-atleta.component';
 import { LandingComponent } from './landing/landing.component';
+import { FormularioSponsorComponent } from './formulario-sponsor/formulario-sponsor.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LandingComponent } from './landing/landing.component';
     BodyComponent,
     FooterComponent,
     FormularioAtletaComponent,
-    LandingComponent
+    LandingComponent,
+    FormularioSponsorComponent
   ],
   imports: [
     BrowserModule,
