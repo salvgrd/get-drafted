@@ -30,6 +30,7 @@ export class FormularioAtletaComponent implements OnInit {
         Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
       ]),
       tel: new FormControl('', [
+        Validators.minLength(8),
         Validators.maxLength(12)
       ]),
       disci: new FormControl('', [
@@ -54,10 +55,10 @@ export class FormularioAtletaComponent implements OnInit {
   }
 
   ngOnInit() {
-    let controlEmail = this.formulario.controls['email']
-    controlEmail.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
-      console.log(value);
-    })
+    // let controlEmail = this.formulario.controls['email']
+    // controlEmail.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
+    //   console.log(value);
+    // })
   }
 
   onSubmit() {
@@ -67,14 +68,13 @@ export class FormularioAtletaComponent implements OnInit {
   edadValidator(control) {
     let edadValue = control.value;
     let edadMinima = 12;
-    let edadMaxima = 80;
 
-    if (edadValue >= edadMinima && edadValue <= edadMaxima) {
+    if (edadValue >= edadMinima) {
       // Correcto
       return null;
     } else {
       // Incorrecto
-      return { edadvalidator: { edadminima: edadMinima, edadmaxima: edadMaxima } };
+      return { edadvalidator: { edadminima: edadMinima } };
     }
   }
 

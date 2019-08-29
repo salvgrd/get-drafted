@@ -3,24 +3,52 @@
         <div class="form-group">
             <label for="">Nombre</label>
             <input type="text" class="form-control" formControlName="nombre">
-            <!-- <p class="error"
+            <p class="error"
                 *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
-                El campo nombre es requerido
+                El campo nombre es requerido.
             </p>
             <p class="error"
                 *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
-                El campo nombre debe tener máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
+                El campo nombre solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
                 caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}}
                 caracteres.
-            </p> -->
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['nombre'].errors?.minlength && formulario.controls['nombre'].touched">
+                El campo nombre necesita como minimo {{formulario.controls['nombre'].errors?.minlength.requiredLength}}
+                caracteres.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Apellidos</label>
             <input type="text" class="form-control" formControlName="apellidos">
+            <p class="error"
+                *ngIf="formulario.controls['apellidos'].errors?.required && formulario.controls['apellidos'].touched">
+                El campo Apellidos es requerido.
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['apellidos'].errors?.maxlength && formulario.controls['apellidos'].touched">
+                El campo Apellidos solo puede tener como máximo {{formulario.controls['apellidos'].errors?.maxlength.requiredLength}}
+                caracteres. Tú has insertado {{formulario.controls['apellidos'].errors?.maxlength.actualLength}}
+                caracteres.
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['apellidos'].errors?.minlength && formulario.controls['apellidos'].touched">
+                El campo apellidos necesita como minimo {{formulario.controls['apellidos'].errors?.minlength.requiredLength}}
+                caracteres.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Edad</label>
             <input type="text" class="form-control" formControlName="edad">
+            <p class="error"
+                *ngIf="formulario.controls['edad'].errors?.edadvalidator && formulario.controls['edad'].touched">
+                No cumple con la edad minima (12).
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['edad'].errors?.required && formulario.controls['edad'].touched">
+                El campo edad es requerido.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Sexo</label>
@@ -29,6 +57,10 @@
                 <option value="F">Mujer</option>
                 <option value="NA">Prefiero no elegir</option>
             </select>
+            <p class="error"
+                *ngIf="formulario.controls['sexo'].errors?.required && formulario.controls['sexo'].touched">
+                Por favor seleccione una opcion.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Pais</label>
@@ -37,6 +69,10 @@
                 <option value="usa">EE.UU</option>
                 <option value="vzla">Venezuela</option>
             </select>
+            <p class="error"
+                *ngIf="formulario.controls['pais'].errors?.required && formulario.controls['pais'].touched">
+                Por favor seleccione una opcion.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Disciplina</label>
@@ -45,22 +81,53 @@
                 <option value="wl">Halterofilia</option>
                 <option value="swim">Natacion</option>
             </select>
+            <p class="error"
+                *ngIf="formulario.controls['disci'].errors?.required && formulario.controls['disci'].touched">
+                Por favor seleccione una opcion.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Email</label>
             <input type="email" class="form-control" formControlName="email">
+            <p class="error"
+                *ngIf="formulario.controls['email'].errors?.required && formulario.controls['email'].touched">
+                Este campo es requerido.
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['email'].errors?.pattern">
+                Este email no es valido.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Telefono</label>
             <input type="text" class="form-control" formControlName="tel">
+            <p class="error"
+                *ngIf="formulario.controls['tel'].errors?.maxlength && formulario.controls['tel'].touched">
+                El campo tel solo puede tener como máximo {{formulario.controls['tel'].errors?.maxlength.requiredLength}}
+                caracteres. Tú has insertado {{formulario.controls['tel'].errors?.maxlength.actualLength}}
+                caracteres.
+            </p>
+            <p class="error"
+                *ngIf="formulario.controls['tel'].errors?.minlength && formulario.controls['tel'].touched">
+                El campo tel necesita como minimo {{formulario.controls['tel'].errors?.minlength.requiredLength}}
+                caracteres.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Password</label>
             <input type="password" class="form-control" formControlName="password">
+            <p class="error"
+                *ngIf="formulario.controls['password'].errors?.pattern">
+                Esta contraseña no es valida.
+            </p>
         </div>
         <div class="form-group">
             <label for="">Repite Password</label>
             <input type="password" class="form-control" formControlName="password_repeat">
+            <p class="error"
+                *ngIf="formulario.controls['password_repeat'].errors?.passwordvalidator">
+                Las contraseñas no coinciden.
+            </p>
         </div>
         <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-block btn-primary">
     </form>
