@@ -1,7 +1,7 @@
 *{
     color: white;
 }
-div.container-fluid{
+div.cover-usuario{
     background-image: url('https://images.pexels.com/photos/2131841/pexels-photo-2131841.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
     background-size: cover;
     background-position: center center;
@@ -17,4 +17,25 @@ div.container-fluid{
 h3.nombre-atleta{
     display: inline-block;
     margin-left: 3vh;
+}
+/* galeria */
+div.body-container{
+    height: 72.5vh;
+}
+div.galeria{
+    position: relative;
+    float: right;
+    background-color: #343a40;
+    color: white;
+    width: 60vh;
+    height: 100%;
+}
+div.galeria img{
+    margin-top: 21.8%;
+    margin-bottom: 21.8%;
+    max-width: 100%;
+    max-height: 100%;
+}
+div.selector{
+    text-align: center;
 }
