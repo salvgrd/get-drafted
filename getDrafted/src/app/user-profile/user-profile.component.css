@@ -18,6 +18,16 @@ h3.nombre-atleta{
     display: inline-block;
     margin-left: 3vh;
 }
+/*marcas*/ 
+div.marcas{
+    height: 100%;
+    width: 70.5%;
+    position: relative;
+    float: left;
+    background-color: #343a40;
+
+}
+
 /* galeria */
 div.body-container{
     height: 72.5vh;
@@ -27,7 +37,7 @@ div.galeria{
     float: right;
     background-color: #343a40;
     color: white;
-    width: 60vh;
+    width: 29.5%;
     height: 100%;
 }
 div.galeria img{
