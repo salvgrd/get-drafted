@@ -1,0 +1,57 @@
+*{
+    color: white;
+}
+div.cover-usuario{
+    background-image: url('https://images.pexels.com/photos/2131841/pexels-photo-2131841.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    background-size: cover;
+    background-position: center center;
+    height: 20vh;
+}
+.perfil-pic-container img{
+    border-radius: 50%;
+    position: relative;
+    top: 100%;
+    max-width: 10%;
+    max-height: 10%;
+    z-index: 1;
+}
+h3.nombre-atleta{
+    display: inline-block;
+    margin-left: 3vh;
+}
+/*marcas*/ 
+div.marcas{
+    height: 100%;
+    width: 70.5%;
+    position: relative;
+    float: left;
+    background-color: #343a40;
+}
+div.row{
+    margin-top: 13.1%;
+}
+div.row>div.col-4{
+    padding: 2%;
+    font-size: 3em;
+}
+/* galeria */
+div.body-container{
+    height: 72.5vh;
+}
+div.galeria{
+    position: relative;
+    float: right;
+    background-color: #343a40;
+    color: white;
+    width: 29.5%;
+    height: 100%;
+}
+div.galeria img{
+    margin-top: 21.8%;
+    margin-bottom: 21.8%;
+    max-width: 100%;
+    max-height: 100%;
+}
+div.selector{
+    text-align: center;
+}
