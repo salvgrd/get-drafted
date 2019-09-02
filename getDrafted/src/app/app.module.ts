@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormularioAtletaComponent } from './formulario-atleta/formulario-atleta.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormularioSponsorComponent } from './formulario-sponsor/formulario-sponsor.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormularioSponsorComponent } from './formulario-sponsor/formulario-spon
     FooterComponent,
     FormularioAtletaComponent,
     LandingComponent,
-    FormularioSponsorComponent
+    FormularioSponsorComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
