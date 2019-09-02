@@ -4,6 +4,7 @@ import { FormularioAtletaComponent } from './formulario-atleta/formulario-atleta
 import { LandingComponent } from './landing/landing.component';
 import { FormularioSponsorComponent } from './formulario-sponsor/formulario-sponsor.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'registro-atleta', component: FormularioAtletaComponent },
   { path: 'registro-sponsor', component: FormularioSponsorComponent},
-  { path: 'atleta/:userid', component: UserProfileComponent}
+  { path: 'atleta/:userid', component: UserProfileComponent},
+  { path: 'sponsor/:userid', component: SponsorProfileComponent}
   // { path: 'info', component: ContactComponent },
   // { path: 'contact', component: ContactComponent },
   // { path: 'pricing', component: PricingComponent, canActivate: [TestGuard] },
