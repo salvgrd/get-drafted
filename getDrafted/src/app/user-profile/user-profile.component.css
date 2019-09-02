@@ -13,6 +13,7 @@ div.cover-usuario{
     top: 100%;
     max-width: 10%;
     max-height: 10%;
+    z-index: 1;
 }
 h3.nombre-atleta{
     display: inline-block;
@@ -25,9 +26,14 @@ div.marcas{
     position: relative;
     float: left;
     background-color: #343a40;
-
 }
-
+div.row{
+    margin-top: 13.1%;
+}
+div.row>div.col-4{
+    padding: 2%;
+    font-size: 3em;
+}
 /* galeria */
 div.body-container{
     height: 72.5vh;
