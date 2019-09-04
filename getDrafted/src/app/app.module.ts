@@ -12,6 +12,7 @@ import { FormularioAtletaComponent } from './formulario-atleta/formulario-atleta
 import { LandingComponent } from './landing/landing.component';
 import { FormularioSponsorComponent } from './formulario-sponsor/formulario-sponsor.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     FormularioAtletaComponent,
     LandingComponent,
     FormularioSponsorComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SponsorProfileComponent
   ],
   imports: [
     BrowserModule,
