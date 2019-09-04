@@ -1,4 +1,171 @@
-<app-header></app-header>
-<app-hero></app-hero>
-<app-body></app-body>
+<header>
+  <nav class="navbar navbar-expand-lg py-0 navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">GetDrafted</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/landing']" fragment="services" (click)="onAnchorClick()">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Register</a>
+        </li>
+        <li class="nav-item navbar-toggler">
+          <a class="nav-link">Login</a>
+        </li>
+      </ul>
+    </div>
+    <span class="navbar-text login-lg">
+        <a class="nav-link">Login</a>
+    </span>
+  </nav>
+</header>
+<div class="hero container-fluid">
+    <div class="titulos py-4 px-4">
+        <h1>GetDrafted: plataforma para atletas.</h1>
+        <h2>Impulsa tu carrera deportiva.</h2>
+    </div>
+    <div class="container botones">
+            <p class="text-center font-weight-bold">Unete a GetDrafted ahora</p>
+        <a routerLink="/registro-atleta" class="btn btn-outline-light btn-block boton">Registrate como Atleta.</a>
+        <a routerLink="/registro-sponsor" class="btn btn-outline-light btn-block boton active">Registrate como Sponsor.</a>
+    </div>
+</div>
+<main>
+    <section id="sec1" class="container-fluid pt-4 pb-5">
+        <div class="container text-center">
+            <h3 class="font-weight-bold">SECCION UNO</h3>
+            <hr class="mb-5 lineatitulo">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita earum delectus soluta debitis
+                quidem cupiditate nisi odit laboriosam, praesentium quisquam!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis praesentium dolor perferendis a
+                quos aliquid totam tempora iste, sed alias quam. Quo suscipit a laborum id veritatis earum harum
+                minima.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam vero! Assumenda vitae soluta
+                dolore ipsa qui pariatur, quo voluptate consequatur reprehenderit.</p>
+        </div>
+        <div class="container">
+            <hr class="mb-5 lineatitulo">
+            <div class="container-flex row mb-5">
+                <div id="divimg1" class="imagen-seccion2 container col-4">
+                    <img class="img-sponsors" src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?cs=srgb&dl=accion-agua-atleta-863988.jpg&fm=jpg" alt="Card image cap">
+                </div>
+                <div id="divimg2" class="imagen-seccion2 container col-4">
+                    <img class="img-sponsors" src="https://images.pexels.com/photos/217872/pexels-photo-217872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+                </div>
+                <div id="divimg3" class="imagen-seccion2 container col-4">
+                    <img class="img-sponsors" src="https://images.pexels.com/photos/163351/girl-boxer-ring-boxing-pear-163351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" #services>
+        <div class="container-fluid bg-dark text-center text-light py-4">
+            <h2 class="font-weight-bold font-italic">SERVICIOS</h2>
+        </div>
+            <article class="container-fluid py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <!-- <img class="img-fluid" src="images/service-1.jpg"> -->
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 class="py-3 pb-3 font-weight-bold">Titulo del servicio</h3>
+                            <div class="d-none d-md-block">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
+                                    iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
+                                    fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
+                                    quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
+                                    nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
+                                    atque tempore consequatur ullam!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="container-fluid py-5 bg-light">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-12 col-md-6">
+                            <h3 class="py-3 pb-3 font-weight-bold">APP Develomenpt</h3>
+                            <div class="d-none d-md-block">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
+                                    iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
+                                    fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
+                                    quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
+                                    nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
+                                    atque tempore consequatur ullam!</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <!-- <img class="img-fluid" src="images/service-3.jpg"> -->
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="container-fluid py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- <img class="img-fluid" src="images/service-4.jpg"> -->
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h3 class="py-3 pb-3 font-weight-bold">Titulo del servicio</h3>
+                                <div class="d-none d-md-block">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
+                                        iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
+                                        fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
+                                        quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
+                                        nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
+                                        atque tempore consequatur ullam!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </article>
+            <article class="container-fluid py-5 bg-light">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-12 col-md-6">
+                                <h3 class="py-3 pb-3 font-weight-bold">APP Develomenpt</h3>
+                                <div class="d-none d-md-block">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
+                                        iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
+                                        fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
+                                        quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
+                                        nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
+                                        atque tempore consequatur ullam!</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- <img class="img-fluid" src="images/service-2.jpg"> -->
+                            </div>
+                        </div>
+                    </div>
+            </article>
+    </section>
+    <section id="registrar-bottom">
+            <div class="container-fluid bg-dark text-center text-light py-4">
+                <h2 class="font-weight-bold font-italic">Registrate Ahora</h2>
+            </div>
+            <div class="container-fluid bg-light py-5">
+                <div class="container text-center">
+                    <a routerLink="/registro-atleta" class="btn btn-outline-dark btn-block boton">Registrate</a>
+                </div>
+            </div>
+    </section>
+</main>
 <app-footer></app-footer>
