@@ -3,9 +3,9 @@ export class Atleta{
     apellidos: string;
     edad:number;
     sexo: string;
-    pais: string;
+    ubicacion: string;
     telefono: string;
-    email: string;
+    correo: string;
     disciplina: string;
     experiencia: string;
     marcas_personales: string[];
@@ -13,14 +13,14 @@ export class Atleta{
     bio: string;
     fk_sponsor: number;
 
-    constructor(pNombre:string, pApellidos:string, pEdad:number, pSexo:string, pPais:string, pTelefono:string, pEmail:string, pDisciplina:string, pExperiencia:string, pMarcas_personales:string[], pGaleria:string[], pBio:string, pFk_sponsor:number) {
+    constructor(pNombre:string, pApellidos:string, pEdad:number, pSexo:string, pUbicacion:string, pTelefono:string, pCorreo:string, pDisciplina:string, pExperiencia:string, pMarcas_personales:string[], pGaleria:string[], pBio:string, pFk_sponsor:number) {
         this.nombre = pNombre;
         this.apellidos = pApellidos;
         this.edad = pEdad;
         this.sexo = pSexo;
-        this.pais = pPais;
+        this.ubicacion = pUbicacion;
         this.telefono = pTelefono;
-        this.email = pEmail;
+        this.correo = pCorreo;
         this.disciplina = pDisciplina;
         this.experiencia = pExperiencia;
         this.marcas_personales = pMarcas_personales;
