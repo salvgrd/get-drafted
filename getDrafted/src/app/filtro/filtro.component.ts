@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Atleta } from '../models/atleta.model';
+//import { Atleta } from '../models/atleta.model';
 import { AtletasService } from '../atletas.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class FiltroComponent implements OnInit {
 
-  arrAtletas: Atleta[];
+  arrAtletas: any;
 
   constructor( private atletasService: AtletasService, private router: Router) { }
 
@@ -19,9 +19,9 @@ export class FiltroComponent implements OnInit {
       .then((response) => {
         if (response['error']) {
           alert(response['error']);
-          localStorage.removeItem('user-token');
         } else {
-          this.arrAtletas = response;
+           this.arrAtletas = response;
+           console.log(response);
         }
       })
       .catch((err) => {
