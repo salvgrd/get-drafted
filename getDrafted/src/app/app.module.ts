@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FormularioSponsorComponent } from './formulario-sponsor/formulario-sponsor.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.component';
+import { FiltroComponent } from './filtro/filtro.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.compo
     LandingComponent,
     FormularioSponsorComponent,
     UserProfileComponent,
-    SponsorProfileComponent
+    SponsorProfileComponent,
+    FiltroComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
