@@ -1,71 +1,101 @@
 <app-header></app-header>
-<div class="row">
-    <div class="col-3">
-        <form novalidate [formGroup]="filters" (ngSubmit)="onSearch()">
-            <div class="filter mt-5 ml-5">
-                <div class="form-group">
-                    <label class="mt-2">Tipo de usuario</label>
-                    <select formControlName="usertype" class="form-control" id="selecuser">
-                        <option value="0">Atleta</option>
-                        <option value="1">Sponsor</option>
-                    </select>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="text-center container contbotones">
+                <button (click)="show = true" class="btn btn-primary">Atletas</button>
+                <button (click)="show = false" class="btn btn-primary">Sponsors</button> 
+            </div>      
+            <form novalidate [formGroup]="filters" (ngSubmit)="onSearch()" *ngIf="show == true">
+                <div class="filter mt-5 ml-5">
+                    <div class="form-group">
+                        <label>Buscador por nombre:</label>
+                        <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Atleta/Sponsor" id="search">
+                    </div>
+                    <div class="form-group">
+                        <label class="mt-2">Buscador por país:</label>
+                        <select formControlName="pais" class="form-control" id="selectPais">
+                            <option value="">Selecciona un País</option>
+                            <option value="España">España</option>
+                            <option value="USA">USA</option>
+                            <option value="Venezuela">Venezuela</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="mt-2">Buscador por disciplina:</label>
+                        <select formControlName="disci" class="form-control" id="selectDisciplina">
+                            <option value="">Selecciona una Disciplina</option>
+                            <option value="CrossFit">CrossFit</option>
+                            <option value="Halterofilia">Halterofilia</option>
+                            <option value="Natacion">Natación</option>
+                            <option value="Atletismo">Atletismo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="mt-2">Buscador por Sexo:</label>
+                        <select formControlName="sexo" class="form-control" id="selectSexo">
+                            <option value="">Selecciona el Sexo</option>
+                            <option value="F">Femenino</option>
+                            <option value="M">Masculino</option>
+                        </select>
+                    </div>
+                    <div>
+                            <!-- [disabled]="!formulario.valid -->
+                        <button type="submit" class="btn btn-primary mt-3 btn-block">Buscar</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Buscador por nombre:</label>
-                    <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Atleta/Sponsor" id="search">
+            </form>
+            <form novalidate [formGroup]="filters" (ngSubmit)="sponsorOnSearch()" *ngIf="show == false">
+                <div class="filter mt-5 ml-5">
+                    <div class="form-group">
+                        <label>Buscador por nombre:</label>
+                        <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Sponsor" id="search">
+                    </div>
+                    <div class="form-group">
+                        <label class="mt-2">Buscador por país:</label>
+                        <select formControlName="pais" class="form-control" id="selectPais">
+                            <option value="">Selecciona un País</option>
+                            <option value="España">España</option>
+                            <option value="USA">USA</option>
+                            <option value="Venezuela">Venezuela</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="mt-2">Buscador por disciplina:</label>
+                        <select formControlName="disci" class="form-control" id="selectDisciplina">
+                            <option value="">Selecciona una Disciplina</option>
+                            <option value="CrossFit">CrossFit</option>
+                            <option value="Halterofilia">Halterofilia</option>
+                            <option value="Natacion">Natación</option>
+                            <option value="Atletismo">Atletismo</option>
+                        </select>
+                    </div>
+                    <div>
+                            <!-- [disabled]="!formulario.valid -->
+                        <button type="submit" class="btn btn-primary mt-3 btn-block">Buscar</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-2">Buscador por país:</label>
-                    <select formControlName="pais" class="form-control" id="selectPais">
-                        <option value="">Selecciona un País</option>
-                        <option value="España">España</option>
-                        <option value="USA">USA</option>
-                        <option value="Venezuela">Venezuela</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="mt-2">Buscador por disciplina:</label>
-                    <select formControlName="disci" class="form-control" id="selectDisciplina">
-                        <option value="">Selecciona una Disciplina</option>
-                        <option value="CrossFit">CrossFit</option>
-                        <option value="Halterofilia">Halterofilia</option>
-                        <option value="Natacion">Natación</option>
-                        <option value="Atletismo">Atletismo</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="mt-2">Buscador por Sexo:</label>
-                    <select formControlName="sexo" class="form-control" id="selectSexo">
-                        <option value="">Selecciona el Sexo</option>
-                        <option value="F">Femenino</option>
-                        <option value="M">Masculino</option>
-                    </select>
-                </div>
-                <div>
-                        <!-- [disabled]="!formulario.valid -->
-                    <button type="submit" class="btn btn-primary mt-3 btn-block">Buscar</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="col-9 mt-3">
-        <table class="table">
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Email</th>
-                <th>Telefono</th>
-                <th>Sexo</th>
-            </tr>
-            <tr *ngFor="let atleta of arrAtletas">
-                <td>{{atleta.id}}</td>
-                <td>{{atleta.nombre}}</td>
-                <td>{{atleta.apellidos}}</td>
-                <td>{{atleta.correo}}</td>
-                <td>{{atleta.telefono == '' ? 'N/A' : 'atleta.telefono'}}</td>
-                <td>{{atleta.sexo == 'M' ? 'Masculino' : 'Femenino'}}</td>
-            </tr>           
-        </table>
+            </form>
+        </div>
+        <div class="col-9 mt-3">
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Sexo</th>
+                </tr>
+                <tr *ngFor="let atleta of arrAtletas">
+                    <td>{{atleta.id}}</td>
+                    <td>{{atleta.nombre}}</td>
+                    <td>{{atleta.apellidos}}</td>
+                    <td>{{atleta.correo}}</td>
+                    <td>{{atleta.telefono == '' ? 'N/A' : 'atleta.telefono'}}</td>
+                    <td>{{atleta.sexo == 'M' ? 'Masculino' : 'Femenino'}}</td>
+                </tr>           
+            </table>
+        </div>
     </div>
 </div>
