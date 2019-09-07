@@ -6,7 +6,7 @@
                 <button (click)="show = true" class="btn btn-primary">Atletas</button>
                 <button (click)="show = false" class="btn btn-primary">Sponsors</button> 
             </div>      
-            <form novalidate [formGroup]="filters" (ngSubmit)="onSearch()" *ngIf="show == true">
+            <form novalidate [formGroup]="filtersAtletas" (ngSubmit)="onSearch()" *ngIf="show == true">
                 <div class="filter mt-5 ml-5">
                     <div class="form-group">
                         <label>Buscador por nombre:</label>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </form>
-            <form novalidate [formGroup]="filters" (ngSubmit)="sponsorOnSearch()" *ngIf="show == false">
+            <form novalidate [formGroup]="filtersSponsors" (ngSubmit)="sponsorOnSearch()" *ngIf="show == false">
                 <div class="filter mt-5 ml-5">
                     <div class="form-group">
                         <label>Buscador por nombre:</label>
@@ -81,19 +81,20 @@
             <table class="table">
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
+                    <th>Pais</th>
                     <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
+                    <th>Pais</th>
+                    <th>Disciplina</th>
                     <th>Sexo</th>
                 </tr>
                 <tr *ngFor="let atleta of arrAtletas">
                     <td>{{atleta.id}}</td>
                     <td>{{atleta.nombre}}</td>
                     <td>{{atleta.apellidos}}</td>
-                    <td>{{atleta.correo}}</td>
-                    <td>{{atleta.telefono == '' ? 'N/A' : 'atleta.telefono'}}</td>
+                    <td>{{atleta.ubicacion}}</td>
+                    <td>{{atleta.disciplina == '' ? 'N/A' : atleta.disciplina}}</td>
                     <td>{{atleta.sexo == 'M' ? 'Masculino' : 'Femenino'}}</td>
+                    <!-- <td>{{atleta.telefono == '' ? 'N/A' : 'atleta.telefono'}}</td> -->
                 </tr>           
             </table>
         </div>
