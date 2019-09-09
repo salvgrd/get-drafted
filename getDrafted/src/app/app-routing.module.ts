@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'registro-sponsor', component: FormularioSponsorComponent},
   { path: 'atleta/:userid', component: UserProfileComponent},
   { path: 'sponsor/:userid', component: SponsorProfileComponent},
-  { path: 'filtro', component: FiltroComponent}
+  { path: 'buscar', component: FiltroComponent}
   // { path: 'info', component: ContactComponent },
   // { path: 'pricing', component: PricingComponent, canActivate: [TestGuard] },
   // { path: 'libro/:idLibro', component: LibroComponent, children: [
