@@ -1,3 +1,8 @@
+.userbox:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    transition: background-color 200ms linear;
+  }
 div.contbotones>button{
     margin: 10px;
 }

@@ -78,16 +78,16 @@
         </div>
         <div class="col-9 mt-3">
             <div class="container" *ngIf="show == 'atleta'">
-                <div class="container-fluid py-2 my-1 border text-left" *ngFor="let user of arrUserShowList">
+                <div class="container-fluid py-2 my-1 border userbox text-left" [routerLink]="['/atleta', user.id]" *ngFor="let user of arrUserShowList">
                     <h4>{{user.apellidos}}, {{user.nombre}}</h4>
                     <p>Ubicacion: {{user.ubicacion}} Disciplina: {{user.disciplina}}</p>
                     <p>{{user.sexo == 'M' ? 'Masculino' : 'Femenino'}}, {{user.edad}} años</p>
                 </div>
             </div>
             <div class="container" *ngIf="show == 'sponsor'">
-                <div class="container-fluid py-2 my-1 border text-left" *ngFor="let user of arrUserShowList">
-                    <h4>{{user.nombre}}</h4>
-                    <p>Ubicacion: {{user.ubicacion}} Disciplinas: {{user.disciplinas_patrocinio}}</p>
+                <div class="container-fluid py-2 my-1 border userbox text-left" [routerLink]="['/sponsor', user.id]" *ngFor="let user of arrUserShowList">
+                        <h4>{{user.nombre}}</h4>
+                        <p>Ubicacion: {{user.ubicacion}} Disciplinas: {{user.disciplinas_patrocinio}}</p>
                 </div>
             </div>
         </div>
