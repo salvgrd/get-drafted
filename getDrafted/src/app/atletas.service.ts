@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Atleta } from './models/atleta.model';
 //import { Atleta } from './models/atleta.model';
 
 @Injectable({
@@ -21,6 +22,12 @@ export class AtletasService {
     let response = this.http.get(`${this.baseUrl}empresas?format=json`).toPromise();
     return response;
   }
+
+  getAtletaById(pId) {
+    let response = this.http.get(`${this.baseUrl}atletas/${pId}?format=json`).toPromise();
+    return response;
+  }
+
 /*   create(values): Promise<any> {
     let httOptions = {
       headers: new HttpHeaders({

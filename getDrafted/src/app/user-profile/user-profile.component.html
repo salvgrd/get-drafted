@@ -2,23 +2,41 @@
 <div class="container-fluid cover-usuario">
     <div class="perfil-pic-container">
         <img class="mt-5" src="https://everydaynutrition.co.uk/wp-content/uploads/2015/01/default-user-avatar.png" alt="Foto de perfil">
-        <h3 class="nombre-atleta">Atleta Numero Uno.</h3>
+        <h3 class="nombre-atleta">{{atleta?.nombre}} {{atleta?.apellidos}}</h3>
     </div>
 </div>
 <div class="body-container">
-    <div class="container px-0 marcas">
+    <div class="container marcas">
         <div class="row">
-            <div class="col-4 text-center font-weight-bold">0 kg</div>
+            <div class="col-2"></div>
+            <div class="col-4">
+                <h4>ID: {{atleta?.id}}</h4>
+                <h4>Nombre: {{atleta?.nombre}}</h4>
+                <h4>Apellidos: {{atleta?.apellidos}}</h4>
+                <h4>Edad: {{atleta?.edad}}</h4>
+                <h4>Sexo: {{atleta?.sexo}}</h4>
+                <h4>Ubicación: {{atleta?.ubicacion}}</h4>
+                <h4>Telefono: {{atleta?.telefono}}</h4>
+                <h4>Correo: {{atleta?.correo}}</h4>
+                <h4>Disciplina: {{atleta?.disciplina}}</h4>
+                <h4>Experiencia: {{atleta?.experiencia}}</h4>
+                <h4>Bio: {{atleta?.bio}}</h4>
+        
+               <!--  {{atleta.marcas_personales}}
+                {{atleta.galeria}}
+                {{atleta.fk_sponsor}} -->
+            </div>
+            <!-- <div class="col-4 text-center font-weight-bold">0 kg</div>
             <div class="col-4 text-center font-weight-bold">0 kg</div>
             <div class="col-4 text-center font-weight-bold">0 kg</div>
             <div class="col-4 text-center font-weight-bold">00:00</div>
             <div class="col-4 text-center font-weight-bold">00:00</div>
-            <div class="col-4 text-center font-weight-bold">00:00</div>
+            <div class="col-4 text-center font-weight-bold">00:00</div> -->
         </div>
     </div>
     <div class="container galeria px-0">
         <div class="selector selector-top">^</div>
-        <img src="https://images.pexels.com/photos/936094/pexels-photo-936094.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        <img src={{atleta?.galeria}} alt="">
         <div class="selector selector-bot">v</div>
     </div>
 </div>

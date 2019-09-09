@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AtletasService } from '../atletas.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  atleta: any;
+
+  constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) {
+   }
 
   ngOnInit() {
+    /* this.atletasService.getAtletaById()
+    .then((response) => {
+        this.atleta = response
+      })
+      .catch((err)=>{
+        console.log(err);
+      }) */
+      this.activatedRoute.params.subscribe(params => {
+        this.atletasService.getAtletaById(params.userid)
+          .then((response) => {
+            this.atleta = response;
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      });
+
   }
 
 }
