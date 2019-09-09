@@ -3,14 +3,14 @@
     <div class="row">
         <div class="col-3">
             <div class="text-center container contbotones">
-                <button (click)="show = true" class="btn btn-primary">Atletas</button>
-                <button (click)="show = false" class="btn btn-primary">Sponsors</button> 
+                <button (click)="clearerShowList()" class="btn btn-primary">Atletas</button>
+                <button (click)="clearerShowList()" class="btn btn-primary">Sponsors</button> 
             </div>      
             <form novalidate [formGroup]="filtersAtletas" (ngSubmit)="onSearch()" *ngIf="show == true">
                 <div class="filter mt-5 ml-5">
                     <div class="form-group">
                         <label>Buscador por nombre:</label>
-                        <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Atleta/Sponsor" id="search">
+                        <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Atleta" id="search">
                     </div>
                     <div class="form-group">
                         <label class="mt-2">Buscador por país:</label>
@@ -71,30 +71,43 @@
                         </select>
                     </div>
                     <div>
-                            <!-- [disabled]="!formulario.valid -->
                         <button type="submit" class="btn btn-primary mt-3 btn-block">Buscar</button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-9 mt-3">
-            <table class="table">
+            <table class="table" *ngIf="show == true">
                 <tr>
                     <th>Id</th>
-                    <th>Pais</th>
+                    <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Pais</th>
                     <th>Disciplina</th>
                     <th>Sexo</th>
                 </tr>
-                <tr *ngFor="let atleta of arrAtletas">
-                    <td>{{atleta.id}}</td>
-                    <td>{{atleta.nombre}}</td>
-                    <td>{{atleta.apellidos}}</td>
-                    <td>{{atleta.ubicacion}}</td>
-                    <td>{{atleta.disciplina == '' ? 'N/A' : atleta.disciplina}}</td>
-                    <td>{{atleta.sexo == 'M' ? 'Masculino' : 'Femenino'}}</td>
-                    <!-- <td>{{atleta.telefono == '' ? 'N/A' : 'atleta.telefono'}}</td> -->
+                <tr *ngFor="let user of arrUserShowList">
+                    <td>{{user.id}}</td>
+                    <td>{{user.nombre}}</td>
+                    <td>{{user.apellidos}}</td>
+                    <td>{{user.ubicacion}}</td>
+                    <td>{{user.disciplina == '' ? 'N/A' : user.disciplina}}</td>
+                    <td>{{user.sexo == 'M' ? 'Masculino' : 'Femenino'}}</td>
+                    <!-- <td>{{user.telefono == '' ? 'N/A' : 'user.telefono'}}</td> -->
+                </tr>           
+            </table>
+            <table class="table" *ngIf="show == false">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Pais</th>
+                    <th>Disciplina</th>
+                </tr>
+                <tr *ngFor="let user of arrUserShowList">
+                    <td>{{user.id}}</td>
+                    <td>{{user.nombre}}</td>
+                    <td>{{user.ubicacion}}</td>
+                    <td>{{user.disciplinas_patrocinio}}</td>
                 </tr>           
             </table>
         </div>

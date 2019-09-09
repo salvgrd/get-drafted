@@ -12,8 +12,9 @@ export class FiltroComponent implements OnInit {
   show: boolean;
   filtersAtletas: FormGroup;
   filtersSponsor: FormGroup;
-  arrResults: any;
-  arrAtletas: any;
+  arrResultsAtletas: any;
+  arrResultsSponsors: any;
+  arrUserShowList: any;
 
   constructor( private atletasService: AtletasService, private router: Router) {
     this.filtersAtletas = new FormGroup({
@@ -31,24 +32,40 @@ export class FiltroComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.atletasService.getAll()
+    this.atletasService.getAllAtletas()
       .then((response) => {
         if (response['error']) {
           alert(response['error']);
         } else {
-           this.arrResults = response;
+           this.arrResultsAtletas = response;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      this.atletasService.getAllSponsors()
+      .then((response) => {
+        if (response['error']) {
+          alert(response['error']);
+        } else {
+          console.log(response);
+           this.arrResultsSponsors = response;
         }
       })
       .catch((err) => {
         console.log(err);
       })
   }
+  clearerShowList(){
+    this.show = !this.show;
+    this.arrUserShowList = [];
+  }
   // Hacer estas funciones escalables.
   // Hacer que al menos un campo sea rellenado
   // funciones formulario de atletas
   filterByName(){
     let fname = this.filtersAtletas.value.nombre;
-    let atletas = this.arrResults;
+    let atletas = this.arrResultsAtletas;
     let filteredByName = atletas.filter( atleta => atleta.nombre == fname )
     return filteredByName;
   }
@@ -62,7 +79,6 @@ export class FiltroComponent implements OnInit {
     let pArr = arr;
     let fdisci = this.filtersAtletas.value.disci;
     let filteredBySport = pArr.filter(atleta => atleta.disciplina == fdisci);
-    console.log(pArr);
     return filteredBySport;
   }
   filterByGender(arr){
@@ -72,24 +88,57 @@ export class FiltroComponent implements OnInit {
     return filteredByGender;
   }
   onSearch(){
-    this.arrAtletas = this.arrResults;
+    this.arrUserShowList = this.arrResultsAtletas;
     if (this.filtersAtletas.value.nombre != "") {
       let fNombre = this.filterByName()
-      this.arrAtletas = fNombre;
+      this.arrUserShowList = fNombre;
     };
     if (this.filtersAtletas.value.pais != "") {
-      let filtered = this.filterByLocation(this.arrAtletas)
-      this.arrAtletas = filtered;
+      let filtered = this.filterByLocation(this.arrUserShowList)
+      this.arrUserShowList = filtered;
     };
     if (this.filtersAtletas.value.disci != "") {
-      let filtered = this.filterBySport(this.arrAtletas)
-      this.arrAtletas = filtered;
+      let filtered = this.filterBySport(this.arrUserShowList)
+      this.arrUserShowList = filtered;
     }
     if (this.filtersAtletas.value.sexo != "") {
-      let filtered = this.filterByGender(this.arrAtletas)
-      this.arrAtletas = filtered;
+      let filtered = this.filterByGender(this.arrUserShowList)
+      this.arrUserShowList = filtered;
     }
   }
   //funciones del formulario de sponsors.
-
+  sponsorFilterByName(){
+    let fname = this.filtersSponsor.value.nombre;
+    let sponsors = this.arrResultsSponsors;
+    let filteredByName = sponsors.filter( sponsor => sponsor.nombre == fname )
+    return filteredByName;
+  }
+  sponsorFilterByLocation(arr){
+    let pArr = arr;
+    let fubicacion = this.filtersSponsor.value.pais;
+    let filteredByLocation = pArr.filter(sponsor => sponsor.ubicacion == fubicacion);
+    return filteredByLocation;
+  }
+  sponsorFilterBySport(arr){
+    let pArr = arr;
+    let fdisci = this.filtersSponsor.value.disci;
+    let filteredBySport = pArr.filter(sponsor => sponsor.disciplinas_patrocinio == fdisci);
+    return filteredBySport;
+  }
+  sponsorOnSearch(){
+    this.arrUserShowList = this.arrResultsSponsors;
+    console.log(this.arrUserShowList);
+    // if (this.filtersSponsor.value.nombre != "") {
+    //   let fNombre = this.sponsorFilterByName()
+    //   this.arrUserShowList = fNombre;
+    // };
+    // if (this.filtersSponsor.value.pais != "") {
+    //   let filtered = this.sponsorFilterByLocation(this.arrUserShowList)
+    //   this.arrUserShowList = filtered;
+    // };
+    // if (this.filtersSponsor.value.disci != "") {
+    //   let filtered = this.sponsorFilterBySport(this.arrUserShowList)
+    //   this.arrUserShowList = filtered;
+    // }
+  }
 }

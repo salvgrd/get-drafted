@@ -10,15 +10,17 @@ export class AtletasService {
   baseUrl: string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = "http://localhost:3000/api/atletas?format=json";
+    this.baseUrl = "http://localhost:3000/api/";
   }
 
-  getAll() {
-    let response = this.http.get(this.baseUrl).toPromise();
+  getAllAtletas() {
+    let response = this.http.get(`${this.baseUrl}atletas?format=json`).toPromise();
     return response;
-
   }
-
+  getAllSponsors() {
+    let response = this.http.get(`${this.baseUrl}empresas?format=json`).toPromise();
+    return response;
+  }
 /*   create(values): Promise<any> {
     let httOptions = {
       headers: new HttpHeaders({
