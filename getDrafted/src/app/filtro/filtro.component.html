@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-3">
             <div class="text-center container contbotones">
-                <button (click)="clearerShowList()" class="btn btn-primary">Atletas</button>
-                <button (click)="clearerShowList()" class="btn btn-primary">Sponsors</button> 
+                <button (click)="clearerShowAtleta()" class="btn btn-primary">Atletas</button>
+                <button (click)="clearerShowSponsor()" class="btn btn-primary">Sponsors</button> 
             </div>      
-            <form novalidate [formGroup]="filtersAtletas" (ngSubmit)="onSearch()" *ngIf="show == true">
-                <div class="filter mt-5 ml-5">
+            <form novalidate [formGroup]="filtersAtletas" (ngSubmit)="onSearch()" *ngIf="show == 'atleta'">
+                <div class="filter mt-2 ml-5">
                     <div class="form-group">
                         <label>Buscador por nombre:</label>
                         <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Atleta" id="search">
@@ -45,8 +45,8 @@
                     </div>
                 </div>
             </form>
-            <form novalidate [formGroup]="filtersSponsor" (ngSubmit)="sponsorOnSearch()" *ngIf="show == false">
-                <div class="filter mt-5 ml-5">
+            <form novalidate [formGroup]="filtersSponsor" (ngSubmit)="sponsorOnSearch()" *ngIf="show == 'sponsor'">
+                <div class="filter mt-2 ml-5">
                     <div class="form-group">
                         <label>Buscador por nombre:</label>
                         <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Sponsor" id="search">
@@ -77,39 +77,19 @@
             </form>
         </div>
         <div class="col-9 mt-3">
-            <table class="table" *ngIf="show == true">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Pais</th>
-                    <th>Disciplina</th>
-                    <th>Sexo</th>
-                </tr>
-                <tr *ngFor="let user of arrUserShowList">
-                    <td>{{user.id}}</td>
-                    <td>{{user.nombre}}</td>
-                    <td>{{user.apellidos}}</td>
-                    <td>{{user.ubicacion}}</td>
-                    <td>{{user.disciplina == '' ? 'N/A' : user.disciplina}}</td>
-                    <td>{{user.sexo == 'M' ? 'Masculino' : 'Femenino'}}</td>
-                    <!-- <td>{{user.telefono == '' ? 'N/A' : 'user.telefono'}}</td> -->
-                </tr>           
-            </table>
-            <table class="table" *ngIf="show == false">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Pais</th>
-                    <th>Disciplina</th>
-                </tr>
-                <tr *ngFor="let user of arrUserShowList">
-                    <td>{{user.id}}</td>
-                    <td>{{user.nombre}}</td>
-                    <td>{{user.ubicacion}}</td>
-                    <td>{{user.disciplinas_patrocinio}}</td>
-                </tr>           
-            </table>
+            <div class="container" *ngIf="show == 'atleta'">
+                <div class="container-fluid py-2 my-1 border text-left" *ngFor="let user of arrUserShowList">
+                    <h4>{{user.apellidos}}, {{user.nombre}}</h4>
+                    <p>Ubicacion: {{user.ubicacion}} Disciplina: {{user.disciplina}}</p>
+                    <p>{{user.sexo == 'M' ? 'Masculino' : 'Femenino'}}, {{user.edad}} años</p>
+                </div>
+            </div>
+            <div class="container" *ngIf="show == 'sponsor'">
+                <div class="container-fluid py-2 my-1 border text-left" *ngFor="let user of arrUserShowList">
+                    <h4>{{user.nombre}}</h4>
+                    <p>Ubicacion: {{user.ubicacion}} Disciplinas: {{user.disciplinas_patrocinio}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
