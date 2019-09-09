@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./filtro.component.css']
 })
 export class FiltroComponent implements OnInit {
-  show: boolean;
+  show: string;
   filtersAtletas: FormGroup;
   filtersSponsor: FormGroup;
   arrResultsAtletas: any;
@@ -28,7 +28,7 @@ export class FiltroComponent implements OnInit {
       pais: new FormControl ('', []),
       disci: new FormControl ('', [])
     })
-    this.show = true;
+    this.show = 'atleta';
   }
 
   ngOnInit() {
@@ -48,7 +48,6 @@ export class FiltroComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
-          console.log(response);
            this.arrResultsSponsors = response;
         }
       })
@@ -56,9 +55,17 @@ export class FiltroComponent implements OnInit {
         console.log(err);
       })
   }
-  clearerShowList(){
-    this.show = !this.show;
-    this.arrUserShowList = [];
+  clearerShowAtleta(){
+    if (this.show != 'atleta'){
+      this.arrUserShowList = []
+      this.show = 'atleta'
+    }
+  }
+  clearerShowSponsor(){
+    if (this.show != 'sponsor'){
+      this.arrUserShowList = []
+      this.show = 'sponsor'
+    }
   }
   // Hacer estas funciones escalables.
   // Hacer que al menos un campo sea rellenado
@@ -128,17 +135,17 @@ export class FiltroComponent implements OnInit {
   sponsorOnSearch(){
     this.arrUserShowList = this.arrResultsSponsors;
     console.log(this.arrUserShowList);
-    // if (this.filtersSponsor.value.nombre != "") {
-    //   let fNombre = this.sponsorFilterByName()
-    //   this.arrUserShowList = fNombre;
-    // };
-    // if (this.filtersSponsor.value.pais != "") {
-    //   let filtered = this.sponsorFilterByLocation(this.arrUserShowList)
-    //   this.arrUserShowList = filtered;
-    // };
-    // if (this.filtersSponsor.value.disci != "") {
-    //   let filtered = this.sponsorFilterBySport(this.arrUserShowList)
-    //   this.arrUserShowList = filtered;
-    // }
+    if (this.filtersSponsor.value.nombre != "") {
+      let fNombre = this.sponsorFilterByName()
+      this.arrUserShowList = fNombre;
+    };
+    if (this.filtersSponsor.value.pais != "") {
+      let filtered = this.sponsorFilterByLocation(this.arrUserShowList)
+      this.arrUserShowList = filtered;
+    };
+    if (this.filtersSponsor.value.disci != "") {
+      let filtered = this.sponsorFilterBySport(this.arrUserShowList)
+      this.arrUserShowList = filtered;
+    }
   }
 }
