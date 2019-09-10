@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AtletasService } from '../atletas.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-atleta',
@@ -10,7 +12,7 @@ import { debounceTime } from 'rxjs/operators';
 export class FormularioAtletaComponent implements OnInit {
   formulario: FormGroup;
 
-  constructor() {
+  constructor(private atletasService: AtletasService, private router: Router) {
     this.formulario = new FormGroup({
       nombre: new FormControl('', [
         Validators.required,
@@ -25,18 +27,18 @@ export class FormularioAtletaComponent implements OnInit {
       sexo: new FormControl('', [
         Validators.required
       ]),
-      email: new FormControl('', [
+      correo: new FormControl('', [
         Validators.required,
         Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
       ]),
-      tel: new FormControl('', [
+      telefono: new FormControl('', [
         Validators.minLength(8),
         Validators.maxLength(12)
       ]),
-      disci: new FormControl('', [
+      disciplina: new FormControl('', [
         Validators.required
       ]),
-      pais: new FormControl('', [
+      ubicacion: new FormControl('', [
         Validators.required
       ]),
       edad: new FormControl('', [
@@ -62,7 +64,17 @@ export class FormularioAtletaComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formulario.value);
+    this.atletasService.registrarAtleta(this.formulario.value)
+      .then((response) => {
+        if (response['error']) {
+          alert(response['error']);
+        } else {
+           alert('usuario registrado.')
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   edadValidator(control) {

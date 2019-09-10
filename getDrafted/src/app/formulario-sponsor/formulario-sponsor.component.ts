@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AtletasService } from '../atletas.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-sponsor',
@@ -9,9 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class FormularioSponsorComponent implements OnInit {
   formulario: FormGroup;
 
-  constructor() {
+  constructor(private atletasService: AtletasService, private router: Router) {
     this.formulario = new FormGroup({
-      nombre_sponsor: new FormControl('', [
+      nombre: new FormControl('', [
         Validators.required,
         Validators.maxLength(60),
         Validators.minLength(2)
@@ -21,21 +23,16 @@ export class FormularioSponsorComponent implements OnInit {
         Validators.maxLength(80),
         Validators.minLength(6)
       ]),
-      /* bio: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(65535),
-        Validators.minLength(20)
-      ]), */
-      tel: new FormControl('', [
+      telefono: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(12)
       ]),
-      email: new FormControl('', [
+      correo: new FormControl('', [
         Validators.required,
         Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
       ]),
-      pais: new FormControl('', [
+      ubicacion: new FormControl('', [
         Validators.required
       ]),
       password: new FormControl('', [
@@ -57,7 +54,17 @@ export class FormularioSponsorComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formulario.value);
+    this.atletasService.registrarSponsor(this.formulario.value)
+      .then((response) => {
+        if (response['error']) {
+          alert(response['error']);
+        } else {
+           alert('usuario registrado.')
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   equalPasswordValidator(form) {
