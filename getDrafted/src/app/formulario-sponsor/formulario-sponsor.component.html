@@ -1,21 +1,21 @@
 <div class="container">
     <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <label for="">Nombre Sponsor</label>
-            <input type="text" class="form-control" formControlName="nombre_sponsor">
+            <label for="">Nombre Empresa</label>
+            <input type="text" class="form-control" formControlName="nombre">
             <p class="error"
-                *ngIf="formulario.controls['nombre_sponsor'].errors?.required && formulario.controls['nombre_sponsor'].touched">
-                El campo Nombre Sponsor es requerido.
+                *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
+                El campo Nombre Empresa es requerido.
             </p>
             <p class="error"
-                *ngIf="formulario.controls['nombre_sponsor'].errors?.maxlength && formulario.controls['nombre_sponsor'].touched">
-                El campo Nombre Sponsor solo puede tener como máximo {{formulario.controls['nombre_sponsor'].errors?.maxlength.requiredLength}}
-                caracteres. Tú has insertado {{formulario.controls['nombre_sponsor'].errors?.maxlength.actualLength}}
+                *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
+                El campo Nombre Empresa solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
+                caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}}
                 caracteres.
             </p>
             <p class="error"
-                *ngIf="formulario.controls['nombre_sponsor'].errors?.minlength && formulario.controls['nombre_sponsor'].touched">
-                El campo Nombre Sponsor necesita como minimo {{formulario.controls['nombre_sponsor'].errors?.minlength.requiredLength}}
+                *ngIf="formulario.controls['nombre'].errors?.minlength && formulario.controls['nombre'].touched">
+                El campo Nombre Sponsor necesita como minimo {{formulario.controls['nombre'].errors?.minlength.requiredLength}}
                 caracteres.
             </p>
         </div>
@@ -59,44 +59,44 @@
         </div> -->
         <div class="form-group">
             <label for="">Telefono</label>
-            <input type="text" class="form-control" formControlName="tel">
+            <input type="text" class="form-control" formControlName="telefono">
             <p class="error"
-                *ngIf="formulario.controls['tel'].errors?.required && formulario.controls['tel'].touched">
+                *ngIf="formulario.controls['telefono'].errors?.required && formulario.controls['telefono'].touched">
                 El campo Telefono es requerido.
             </p>
             <p class="error"
-                *ngIf="formulario.controls['tel'].errors?.maxlength && formulario.controls['tel'].touched">
-                El campo Telefono solo puede tener como máximo {{formulario.controls['tel'].errors?.maxlength.requiredLength}}
-                caracteres. Tú has insertado {{formulario.controls['tel'].errors?.maxlength.actualLength}}
+                *ngIf="formulario.controls['telefono'].errors?.maxlength && formulario.controls['telefono'].touched">
+                El campo Telefono solo puede tener como máximo {{formulario.controls['telefono'].errors?.maxlength.requiredLength}}
+                caracteres. Tú has insertado {{formulario.controls['telefono'].errors?.maxlength.actualLength}}
                 caracteres.
             </p>
             <p class="error"
-                *ngIf="formulario.controls['tel'].errors?.minlength && formulario.controls['tel'].touched">
-                El campo Telefono necesita como minimo {{formulario.controls['tel'].errors?.minlength.requiredLength}}
+                *ngIf="formulario.controls['telefono'].errors?.minlength && formulario.controls['telefono'].touched">
+                El campo Telefono necesita como minimo {{formulario.controls['telefono'].errors?.minlength.requiredLength}}
                 caracteres.
             </p>
         </div>
         <div class="form-group">
             <label for="">Email</label>
-            <input type="email" class="form-control" formControlName="email">
+            <input type="email" class="form-control" formControlName="correo">
             <p class="error"
-                *ngIf="formulario.controls['email'].errors?.required && formulario.controls['email'].touched">
+                *ngIf="formulario.controls['correo'].errors?.required && formulario.controls['correo'].touched">
                 Este campo es requerido.
             </p>
             <p class="error"
-                *ngIf="formulario.controls['email'].errors?.pattern && formulario.controls['email'].touched">
+                *ngIf="formulario.controls['correo'].errors?.pattern && formulario.controls['correo'].touched">
                 Este email no es valido.
             </p>
         </div>
         <div class="form-group">
             <label for="">Pais</label>
-            <select type="text" class="form-control" formControlName="pais">
+            <select type="text" class="form-control" formControlName="ubicacion">
                 <option value="spain">España</option>
                 <option value="usa">EE.UU</option>
                 <option value="vzla">Venezuela</option>
             </select>
             <p class="error"
-                *ngIf="formulario.controls['pais'].errors?.required && formulario.controls['pais'].touched">
+                *ngIf="formulario.controls['ubicacion'].errors?.required && formulario.controls['ubicacion'].touched">
                 Por favor seleccione una opcion.
             </p>
         </div>
