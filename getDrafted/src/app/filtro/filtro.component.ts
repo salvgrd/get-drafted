@@ -134,7 +134,6 @@ export class FiltroComponent implements OnInit {
   }
   sponsorOnSearch(){
     this.arrUserShowList = this.arrResultsSponsors;
-    console.log(this.arrUserShowList);
     if (this.filtersSponsor.value.nombre != "") {
       let fNombre = this.sponsorFilterByName()
       this.arrUserShowList = fNombre;
