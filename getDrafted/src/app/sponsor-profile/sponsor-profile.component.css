@@ -1,9 +1,12 @@
-div.cover-usuario{
-    background-image: url('https://images.pexels.com/photos/2131841/pexels-photo-2131841.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
-    background-size: cover;
-    background-position: center center;
-    height: 20vh;
+*{
     color: white;
+}
+div.cover-usuario{
+    background-image: url('https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-position: center;
+    /* background-color: #343a40; */
+    height: 22vh;
 }
 .perfil-pic-container img{
     border-radius: 50%;
@@ -13,22 +16,45 @@ div.cover-usuario{
     max-height: 10%;
     z-index: 1;
 }
-h3.nombre-sponsor{
+
+h3.nombre-perfil{
     display: inline-block;
     margin-left: 3vh;
 }
-.container.col-7{
-    color: white;
-}
 
-.row{
+div.body-container{
+    height: 100%;
+    width: 100%;
     background-color: #343a40;
 }
 
-.selector-left{
-    color: white;
-}   
+div.galeria img{
+    margin-top: 7%;
+    margin-bottom: 7%;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8%;
+}
+div.centrar{
+    text-align: center;
+}
 
-.selector-right{
-    color: white;
+/* Marcas personales */
+.v-marca .count-number-no {
+	font-size: 40px;
+	font-weight: 500;
+	color: #16171d;
+}
+.v-marca .count-divider {
+	width: 100%;
+	text-align: center;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.v-marca .count-divider span {
+	background: #e4e4e4;
+	width: 0px;
+	height: 3px;
+	display: inline-block;
 }

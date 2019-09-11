@@ -2,41 +2,58 @@
 <div class="container-fluid cover-usuario">
     <div class="perfil-pic-container">
         <img class="mt-5" src="https://everydaynutrition.co.uk/wp-content/uploads/2015/01/default-user-avatar.png" alt="Foto de perfil">
-        <h3 class="nombre-atleta">{{atleta?.nombre}} {{atleta?.apellidos}}</h3>
+        <h3 class="nombre-perfil">{{atleta?.nombre}} {{atleta?.apellidos}}</h3>
     </div>
 </div>
 <div class="body-container">
-    <div class="container marcas">
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-4">
-                <h4>ID: {{atleta?.id}}</h4>
-                <h4>Nombre: {{atleta?.nombre}}</h4>
-                <h4>Apellidos: {{atleta?.apellidos}}</h4>
-                <h4>Edad: {{atleta?.edad}}</h4>
-                <h4>Sexo: {{atleta?.sexo}}</h4>
-                <h4>Ubicación: {{atleta?.ubicacion}}</h4>
-                <h4>Telefono: {{atleta?.telefono}}</h4>
-                <h4>Correo: {{atleta?.correo}}</h4>
-                <h4>Disciplina: {{atleta?.disciplina}}</h4>
-                <h4>Experiencia: {{atleta?.experiencia}}</h4>
-                <h4>Bio: {{atleta?.bio}}</h4>
-        
-               <!--  {{atleta.marcas_personales}}
-                {{atleta.galeria}}
-                {{atleta.fk_sponsor}} -->
+            <div class="col-12 centrar mt-4">
+                <h5 class="font-weight-bold">---- PERFIL ----</h5>
             </div>
-            <!-- <div class="col-4 text-center font-weight-bold">0 kg</div>
-            <div class="col-4 text-center font-weight-bold">0 kg</div>
-            <div class="col-4 text-center font-weight-bold">0 kg</div>
-            <div class="col-4 text-center font-weight-bold">00:00</div>
-            <div class="col-4 text-center font-weight-bold">00:00</div>
-            <div class="col-4 text-center font-weight-bold">00:00</div> -->
+            <div class="col-1">
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <h2>{{atleta?.nombre}} {{atleta?.apellidos}}</h2>
+                    <input class="btn btn-danger ml-3" type="submit" value="Editar">
+                </div>
+                <h6>ID: {{atleta?.id}}</h6>
+                <h6 class="mb-5">Sexo: {{atleta?.sexo}}</h6>
+                <h5>Edad: {{atleta?.edad}}</h5>
+                <h5>Ubicación: {{atleta?.ubicacion}}</h5>
+                <h5>Telefono: {{atleta?.telefono}}</h5>
+                <h5>Correo: {{atleta?.correo}}</h5>
+                <h5>Disciplina: {{atleta?.disciplina}}</h5>
+                <h5>Experiencia: {{atleta?.experiencia}}</h5>
+                <h5>Sponsor: {{atleta?.fk_sponsor}}</h5>
+                <h5>Bio: {{atleta?.bio}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio? Laborum placeat natus debitis voluptatem excepturi, necessitatibus consequatur? Natus eos corporis repellendus voluptas iusto, perferendis sapiente itaque laboriosam temporibus debitis?</h5>
+            </div>
+            <div class="col-4 centrar">
+                <h4 class="mt-3 mb-4">Marcas Personales</h4>
+            <!-- {{atleta.marcas_personales}} -->
+            
+                <div class="v-marca mb-4">
+                    <div class="count-number-no">0 Kg</div>
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Peso Muerto</h6>
+                </div>
+                <div class="v-marca mb-4">
+                    <div class="count-number-no">0 Kg</div>
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Peso Muerto</h6>
+                </div>
+                <div class="v-marca mb-4">
+                    <div class="count-number-no">00:00</div>
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Run 5K</h6>
+                </div>
+
+            </div>
+            <div class="container galeria col-3">
+                <div class="centrar">^</div>
+                <img src={{atleta?.galeria}} alt="">
+                <div class="centrar">v</div>
+            </div>
         </div>
-    </div>
-    <div class="container galeria px-0">
-        <div class="selector selector-top">^</div>
-        <img src={{atleta?.galeria}} alt="">
-        <div class="selector selector-bot">v</div>
-    </div>
 </div>
+<app-footer></app-footer>

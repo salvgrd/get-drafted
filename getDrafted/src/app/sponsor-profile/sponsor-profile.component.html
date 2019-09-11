@@ -2,35 +2,51 @@
 <div class="container-fluid cover-usuario">
     <div class="perfil-pic-container">
         <img class="mt-5" src="https://everydaynutrition.co.uk/wp-content/uploads/2015/01/default-user-avatar.png" alt="Foto de perfil">
-        <h3 class="nombre-sponsor">Sponsor Numero Uno.</h3>
+        <h3 class="nombre-perfil">{{sponsor?.nombre}}</h3>
     </div>
 </div>
-<div class="row">
-    <div class="container col-7">
-        <div class="mt-5 ml-4">
-            <h1>Bio</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum omnis ipsum reiciendis illum, deserunt saepe! Quod reiciendis soluta consequuntur quam. Veritatis, ea minima illum sit vero voluptates doloremque nesciunt recusandae.</p>
-        </div>
-        <div class="mt-5 ml-4">
-            <h1>Beneficios</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, necessitatibus cupiditate eveniet esse autem possimus, corporis expedita quaerat voluptate impedit tenetur non? Saepe alias fugit quo porro eos illo aliquam.</p>
-        </div>
-    </div>
-    <div class="col-1">
-        <div class="selector-left mt-5">FLECHA</div>
-    </div>
+<div class="body-container">
+        <div class="row">
+            <div class="col-12 centrar mt-4">
+                <h5 class="font-weight-bold">---- PERFIL ----</h5>
+            </div>
+            <div class="col-1">
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <h2>{{sponsor?.nombre}}</h2>
+                    <input class="btn btn-danger ml-3" type="submit" value="Editar">
+                </div>
+                <h6>ID: {{sponsor?.id}}</h6>
 
-    <div class="container col-3">
-        <div class="card mt-3" style="width: 18rem;">
+                <h5 class="mb-5">Ubicación: {{sponsor?.ubicacion}}</h5>
+                <h5>Telefono: {{sponsor?.telefono}}</h5>
+                <h5>Correo: {{sponsor?.correo}}</h5>
+                <h5>Disciplina: {{sponsor?.disciplinas_patrocinio}}</h5>
+
+                <h5>Bio: {{sponsor?.bio}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio? Laborum placeat natus debitis voluptatem excepturi, necessitatibus consequatur? Natus eos corporis repellendus voluptas iusto, perferendis sapiente itaque laboriosam temporibus debitis?</h5>
+            </div>
+            <div class="col-4 centrar">
+                <h4 class="mt-3 mb-4">Beneficios</h4>
+                
+                <!-- POR HACER -->
+
+            </div>
+            <div class="container galeria col-3">
+                <div class="centrar">^</div>
+                <img src={{sponsor?.galeria}} alt="">
+                <div class="centrar">v</div>
+            </div>
+        </div>
+</div>
+<app-footer></app-footer>
+
+
+        <!-- <div class="card mt-3" style="width: 18rem;">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkHSCC-uhs-iBBXm5WCx2MWuBAVtswSJuOafckaXrD-5KBnrsSIQ" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-        </div>    
-    </div>
-    <div class="col-1">
-        <div class="selector-right mt-5">FLECHA</div>
-    </div>
-</div>
+        </div>     -->

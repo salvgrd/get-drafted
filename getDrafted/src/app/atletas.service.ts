@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Atleta } from './models/atleta.model';
 //import { Atleta } from './models/atleta.model';
 
 @Injectable({
@@ -25,6 +24,11 @@ export class AtletasService {
 
   getAtletaById(pId) {
     let response = this.http.get(`${this.baseUrl}atletas/${pId}?format=json`).toPromise();
+    return response;
+  }
+
+  getSponsorById(pId) {
+    let response = this.http.get(`${this.baseUrl}empresas/${pId}?format=json`).toPromise();
     return response;
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AtletasService } from '../atletas.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sponsor-profile',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorProfileComponent implements OnInit {
 
-  constructor() { }
+  sponsor: any;
+
+  constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.atletasService.getSponsorById(params.userid)
+        .then((response) => {
+          console.log(params.userid)
+          this.sponsor = response;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    });
   }
 
 }

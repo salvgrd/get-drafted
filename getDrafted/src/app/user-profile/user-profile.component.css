@@ -2,10 +2,11 @@
     color: white;
 }
 div.cover-usuario{
-    background-image: url('https://images.pexels.com/photos/2131841/pexels-photo-2131841.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    background-image: url('https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background-size: cover;
-    background-position: center center;
-    height: 20vh;
+    background-position: center;
+    /* background-color: #343a40; */
+    height: 22vh;
 }
 .perfil-pic-container img{
     border-radius: 50%;
@@ -15,43 +16,45 @@ div.cover-usuario{
     max-height: 10%;
     z-index: 1;
 }
-h3.nombre-atleta{
+
+h3.nombre-perfil{
     display: inline-block;
     margin-left: 3vh;
 }
-/*marcas*/ 
-div.marcas{
-    height: 100%;
-    width: 70.5%;
-    position: relative;
-    float: left;
-    background-color: #343a40;
-}
-div.row{
-    margin-top: 5%;
-}
-div.row>div.col-4{
-    padding: 2%;
-    font-size: 3em;
-}
-/* galeria */
+
 div.body-container{
-    height: 72.5vh;
-}
-div.galeria{
-    position: relative;
-    float: right;
-    background-color: #343a40;
-    color: white;
-    width: 29.5%;
     height: 100%;
+    width: 100%;
+    background-color: #343a40;
 }
+
 div.galeria img{
-    margin-top: 21.8%;
-    margin-bottom: 21.8%;
-    max-width: 100%;
-    max-height: 100%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8%;
 }
-div.selector{
+div.centrar{
     text-align: center;
+}
+
+/* Marcas personales */
+.v-marca .count-number-no {
+	font-size: 40px;
+	font-weight: 500;
+	color: #16171d;
+}
+.v-marca .count-divider {
+	width: 100%;
+	text-align: center;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.v-marca .count-divider span {
+	background: #e4e4e4;
+	width: 0px;
+	height: 3px;
+	display: inline-block;
 }
