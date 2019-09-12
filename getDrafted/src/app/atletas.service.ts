@@ -40,6 +40,14 @@ export class AtletasService {
     let response = this.http.post(`${this.baseUrl}empresas/register?format=json`, pForm).toPromise();
     return response;
   }
+  loginAtleta(pForm){
+    let response = this.http.post(`${this.baseUrl}atletas/login?format=json`, pForm).toPromise();
+    return response;
+  }
+  loginSponsor(pForm){
+    let response = this.http.post(`${this.baseUrl}empresas/login?format=json`, pForm).toPromise();
+    return response;
+  }
 /*   create(values): Promise<any> {
     let httOptions = {
       headers: new HttpHeaders({
