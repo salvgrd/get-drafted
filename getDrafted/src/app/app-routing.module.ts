@@ -7,6 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { LoginFormComponent } from './login-form/login-form.component'
+import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'atleta/:userid', component: UserProfileComponent},
   { path: 'sponsor/:userid', component: SponsorProfileComponent},
   { path: 'buscar', component: FiltroComponent},
-  { path: 'login', component: LoginFormComponent}
+  { path: 'login', component: LoginFormComponent},
+  { path: 'login-empresas', component: LoginEmpresasComponent}
   // { path: 'info', component: ContactComponent },
   // { path: 'pricing', component: PricingComponent, canActivate: [TestGuard] },
   // { path: 'libro/:idLibro', component: LibroComponent, children: [

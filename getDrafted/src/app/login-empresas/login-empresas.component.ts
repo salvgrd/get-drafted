@@ -4,11 +4,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  selector: 'app-login-empresas',
+  templateUrl: './login-empresas.component.html',
+  styleUrls: ['./login-empresas.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginEmpresasComponent implements OnInit {
   login: FormGroup;
   constructor(private atletasService: AtletasService, private router: Router) {
     this.login = new FormGroup({
@@ -26,13 +26,13 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
   onLogin(){
-    this.atletasService.loginAtleta(this.login.value)
+    this.atletasService.loginSponsor(this.login.value)
       .then((response) => {
         if (response['error']) {
           alert(response['error']);
         } else {
           console.log(response);
-          localStorage.setItem('token-atleta', response['token']);
+          localStorage.setItem('token-sponsor', response['token']);
           alert('Login succesfull');
         }
       })
