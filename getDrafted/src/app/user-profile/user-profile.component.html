@@ -1,34 +1,35 @@
 <app-header></app-header>
 <div class="container-fluid cover-usuario">
-    <div class="perfil-pic-container">
+    <div class="perfil-pic-container ubuntu">
         <img class="mt-5" src="https://everydaynutrition.co.uk/wp-content/uploads/2015/01/default-user-avatar.png" alt="Foto de perfil">
         <h3 class="nombre-perfil">{{atleta?.nombre}} {{atleta?.apellidos}}</h3>
     </div>
 </div>
-<div class="body-container">
+<div class="container-fluid body-container">
         <div class="row">
             <div class="col-12 centrar mt-4">
-                <h5 class="font-weight-bold">---- PERFIL ----</h5>
+                <h4 class="font-weight-bold ubuntu">PERFIL</h4>
+                <hr class="mb-5 lineatitulo">
             </div>
             <div class="col-1">
             </div>
-            <div class="col-4">
-                <div class="row">
+            <div class="col-4 opensans">
+                <div class="row ubuntu">
                     <h2>{{atleta?.nombre}} {{atleta?.apellidos}}</h2>
                     <input class="btn btn-danger ml-3" type="submit" value="Editar">
                 </div>
                 <h6>ID: {{atleta?.id}}</h6>
-                <h6 class="mb-5">Sexo: {{atleta?.sexo}}</h6>
-                <h5>Edad: {{atleta?.edad}}</h5>
-                <h5>Ubicación: {{atleta?.ubicacion}}</h5>
-                <h5>Telefono: {{atleta?.telefono}}</h5>
-                <h5>Correo: {{atleta?.correo}}</h5>
-                <h5>Disciplina: {{atleta?.disciplina}}</h5>
-                <h5>Experiencia: {{atleta?.experiencia}}</h5>
-                <h5>Sponsor: {{atleta?.fk_sponsor}}</h5>
-                <h5>Bio: {{atleta?.bio}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio? Laborum placeat natus debitis voluptatem excepturi, necessitatibus consequatur? Natus eos corporis repellendus voluptas iusto, perferendis sapiente itaque laboriosam temporibus debitis?</h5>
+                <h6 class="mb-5">Sexo: {{atleta?.sexo == 'M' ? 'Masculino' : 'Femenino'}}</h6>
+                <h6>Edad: {{atleta?.edad}}</h6>
+                <h6>Ubicación: {{atleta?.ubicacion}}</h6>
+                <h6>Telefono: {{atleta?.telefono}}</h6>
+                <h6>Correo: {{atleta?.correo}}</h6>
+                <h6>Disciplina: {{atleta?.disciplina}}</h6>
+                <h6>Experiencia: {{atleta?.experiencia}}</h6>
+                <h6>Sponsor: {{atleta?.fk_sponsor}}</h6>
+                <h6>Bio: {{atleta?.bio}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio? Laborum placeat natus debitis voluptatem excepturi, necessitatibus consequatur? Natus eos corporis repellendus voluptas iusto, perferendis sapiente itaque laboriosam temporibus debitis?</h6>
             </div>
-            <div class="col-4 centrar">
+            <div class="col-4 centrar ubuntu">
                 <h4 class="mt-3 mb-4">Marcas Personales</h4>
             <!-- {{atleta.marcas_personales}} -->
             

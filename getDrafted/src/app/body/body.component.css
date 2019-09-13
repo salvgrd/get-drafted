@@ -1,3 +1,8 @@
+*{
+    /* font-family: 'Ubuntu'; */
+    font-family: 'Open Sans';
+}
+
 div.container.imagen-seccion2{
     max-width: 270px;
     max-height: 270px;

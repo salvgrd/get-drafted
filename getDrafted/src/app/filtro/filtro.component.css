@@ -1,8 +1,37 @@
+.ubuntu{
+  font-family: 'Ubuntu';
+}
+.opensans{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid{
+  background-color: #555;
+  /* background-blend-mode: soft-light; */
+  padding-top: 1%;
+  padding-bottom: 1%;
+  transition: background-color 400ms linear;
+}
+.container-fluid:hover{
+  cursor: pointer;
+  background: rgb(112, 109, 109);
+  background-blend-mode: darken;
+  transition: background-color 400ms linear;
+}
+
+.userbox{
+  background: rgba(0,0,0,0.5);
+  color: white;
+  transition: background-color 200ms linear;
+}
+
 .userbox:hover{
     cursor: pointer;
-    background-color: whitesmoke;
+    background: rgba(0,0,0,1);
+    background-blend-mode: luminosity;
     transition: background-color 200ms linear;
   }
+
 div.contbotones>button{
     margin: 10px;
 }
