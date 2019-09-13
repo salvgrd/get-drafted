@@ -6,6 +6,8 @@ import { FormularioSponsorComponent } from './formulario-sponsor/formulario-spon
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { LoginFormComponent } from './login-form/login-form.component'
+import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'registro-sponsor', component: FormularioSponsorComponent},
   { path: 'atleta/:userid', component: UserProfileComponent},
   { path: 'sponsor/:userid', component: SponsorProfileComponent},
-  { path: 'buscar', component: FiltroComponent}
+  { path: 'buscar', component: FiltroComponent},
+  { path: 'login', component: LoginFormComponent},
+  { path: 'login-empresas', component: LoginEmpresasComponent}
   // { path: 'info', component: ContactComponent },
   // { path: 'pricing', component: PricingComponent, canActivate: [TestGuard] },
   // { path: 'libro/:idLibro', component: LibroComponent, children: [

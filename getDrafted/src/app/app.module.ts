@@ -14,6 +14,8 @@ import { FormularioSponsorComponent } from './formulario-sponsor/formulario-spon
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FiltroComponent } from './filtro/filtro.component';
     FormularioSponsorComponent,
     UserProfileComponent,
     SponsorProfileComponent,
-    FiltroComponent
+    FiltroComponent,
+    LoginFormComponent,
+    LoginEmpresasComponent
   ],
   imports: [
     BrowserModule,

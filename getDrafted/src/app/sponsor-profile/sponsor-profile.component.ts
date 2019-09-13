@@ -17,7 +17,6 @@ export class SponsorProfileComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.atletasService.getSponsorById(params.userid)
         .then((response) => {
-          console.log(params.userid)
           this.sponsor = response;
         })
         .catch((err) => {
