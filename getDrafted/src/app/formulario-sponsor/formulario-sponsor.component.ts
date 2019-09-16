@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AtletasService } from '../atletas.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatStepperModule } from '@angular/material';
+import { skip } from 'rxjs/operators';
 
 @Component({
   selector: 'app-formulario-sponsor',
@@ -10,17 +12,22 @@ import { Router } from '@angular/router';
 })
 export class FormularioSponsorComponent implements OnInit {
   formulario: FormGroup;
+  //////////////////////////////////////
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  /////////////////////////////////////
 
-  constructor(private atletasService: AtletasService, private router: Router) {
+  constructor(private atletasService: AtletasService, private router: Router, private _formBuilder: FormBuilder) {
     this.formulario = new FormGroup({
       nombre: new FormControl('', [
         Validators.required,
         Validators.maxLength(60),
         Validators.minLength(2)
       ]),
-      nombre_responsable: new FormControl('', [
+      nombre_contacto: new FormControl('', [
         Validators.required,
-        Validators.maxLength(80),
+        Validators.maxLength(80), 
         Validators.minLength(6)
       ]),
       telefono: new FormControl('', [
@@ -51,6 +58,16 @@ export class FormularioSponsorComponent implements OnInit {
     // controlEmail.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
     //   console.log(value);
     // })
+
+    ////////////////////////////////////////
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    
+    ////////////////////////////////////////
   }
 
   onSubmit() {
@@ -59,7 +76,8 @@ export class FormularioSponsorComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
-           alert('usuario registrado.')
+           console.log(response);
+           alert('usuario registrado.');
         }
       })
       .catch((err) => {
