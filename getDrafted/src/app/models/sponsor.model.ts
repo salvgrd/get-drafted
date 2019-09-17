@@ -1,20 +1,25 @@
-export class Sponsor{
-    nombre_sponsor: string;
-    nombre_responsable: string;
+export class SponsorModel{
+    nombre: string;
+    /* nombre_contacto: string; */
     bio: string;
     telefono: string;
-    email: string;
-    pais: string;
+    correo: string;
+    ubicacion: string;
+    galeria: string[];
     disciplinas_patrocinio: string[];
+    password: string;
+    password_repeat: string;
     
 
-    constructor(pNombre_sponsor:string, pNombre_responsable:string, pBio:string, pTelefono:string, pEmail:string, pPais:string, pDisciplinas_patrocinio:string[]) {
-        this.nombre_sponsor = pNombre_sponsor;
-        this.nombre_responsable = pNombre_responsable;
+    /* constructor(pNombre:string, pNombre_contacto:string, pBio:string, pTelefono:string, pCorreo:string, pUbicacion:string, pGaleria:string[], pDisciplinas_patrocinio:string[], pPassword: string) {
+        this.nombre = pNombre;
+        this.nombre_contacto = pNombre_contacto;
         this.bio = pBio;
         this.telefono = pTelefono;
-        this.email = pEmail;
-        this.pais = pPais;
+        this.correo = pCorreo;
+        this.ubicacion = pUbicacion;
+        this.galeria = pGaleria;
         this.disciplinas_patrocinio = pDisciplinas_patrocinio;
-    }
+        this.password = pPassword;
+    } */
 }

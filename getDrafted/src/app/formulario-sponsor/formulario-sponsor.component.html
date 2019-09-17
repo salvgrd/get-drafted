@@ -120,81 +120,84 @@
     </form>
 </div> -->
 
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
-  <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()"></form>
-  <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="formulario"> <!-- Posible Cambio -->
-        <ng-template matStepLabel>Información de Contacto</ng-template>
-        <div class="row">
-            <mat-form-field>
-            <input matInput placeholder="Nombre de la compañia" formControlName="nombre" required>
-            </mat-form-field>
-        </div>
-        <div class="row">
-            <mat-form-field>
-                <input matInput placeholder="Nombre y apellidos, Persona Responsable" formControlName="nombre_contacto" required>
-            </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="formulario"> <!-- Posible Cambio -->
-        <ng-template matStepLabel>Datos de Ubicación</ng-template>
-        <div class="row">
-            <mat-form-field>
-            <input matInput placeholder="Ubicación" formControlName="ubicacion" required>
-            </mat-form-field>
-        </div>
-        <div class="row">
-            <mat-form-field>
-            <input matInput placeholder="Telefono" formControlName="telefono" required>
-            </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="thirdFormGroup">
-        <form [formGroup]="formulario"> <!-- Posible Cambio -->
-            <ng-template matStepLabel>Datos de Acceso</ng-template>
+</button> -->
+  <!-- <form novalidate [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> -->
+    <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="registerForm">
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> <!-- Posible Cambio -->
+            <ng-template matStepLabel>Información de Contacto</ng-template>
             <div class="row">
                 <mat-form-field>
-                    <input matInput placeholder="Correo" formControlName="correo" required>
+                <input matInput placeholder="Nombre de la compañia" formControlName="nombre" required >
+                </mat-form-field>
+            </div>
+            <!-- <div class="row">
+                <mat-form-field>
+                    <input matInput placeholder="Nombre y apellidos, Persona Responsable" formControlName="nombre_contacto" 
+                    [(ngModel)]="user.nombre_contacto"required>
+                </mat-form-field>
+            </div> -->
+            <div>
+            <button mat-button matStepperNext type="button" [disabled]="!registerForm.valid">Siguiente</button>
+            </div>
+        </form>
+        </mat-step>
+        <mat-step [stepControl]="registerForm">
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> <!-- Posible Cambio -->
+            <ng-template matStepLabel>Datos de Ubicación</ng-template>
+            <div class="row">
+                <mat-form-field>
+                <input matInput placeholder="Ubicación" formControlName="ubicacion" required>
                 </mat-form-field>
             </div>
             <div class="row">
                 <mat-form-field>
-                    <input matInput placeholder="Contraseña" formControlName="password" required>
-                </mat-form-field>
-            </div>
-            <div class="row">
-                <mat-form-field>
-                    <input matInput placeholder="Repetir contraseña" formControlName="password_repeat" required>
+                <input matInput placeholder="Telefono" formControlName="telefono" required>
                 </mat-form-field>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button mat-button matStepperNext type="button">Next</button>
             </div>
         </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
-        <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-toolbar btn-primary">
-      </div>
-    </mat-step>
+        </mat-step>
+        <mat-step [stepControl]="registerForm" >
+            <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> <!-- Posible Cambio -->
+                <ng-template matStepLabel>Datos de Acceso</ng-template>
+                <div class="row">
+                    <mat-form-field>
+                        <input matInput placeholder="Correo" formControlName="correo" required>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <input matInput placeholder="Contraseña" class="form-control" formControlName="password" required>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <input matInput placeholder="Repetir contraseña" class="form-control" formControlName="password_repeat" required>
+                        <p class="error"
+                *ngIf="registerForm.controls['password_repeat'].errors?.passwordvalidator">
+                Las contraseñas no coinciden.
+            </p>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious type="button">Back</button>
+                    <button mat-button type="submit" class="mat-raised-button mat-primary" [disabled]="!registerForm.valid" matStepperNext>Registrar</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+        <ng-template matStepLabel>Terminado</ng-template>
+        Felicidades, ya formas parte de GetDrafTed!
+        <div>
+            <button mat-button [routerLink]="['/login']">Pulsa para iniciar sección</button>
+        </div>
+        </mat-step>
 </mat-horizontal-stepper>
   
 
