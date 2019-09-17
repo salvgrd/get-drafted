@@ -33,9 +33,8 @@ export class LoginEmpresasComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
-          console.log(response);
           localStorage.setItem('token-sponsor', response['token']);
-          alert('Login succesfull');
+          this.router.navigate([`/sponsor/${response['userId']}`]);
         }
       })
       .catch((err) => {
