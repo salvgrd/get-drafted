@@ -13,10 +13,12 @@ export class LoginFormComponent implements OnInit {
   constructor(private atletasService: AtletasService, private router: Router) {
     this.login = new FormGroup({
       correo: new FormControl('',[
-        Validators.required
+        Validators.required,
+        Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
       ]),
       password: new FormControl('',[
-        Validators.required
+        Validators.required,
+        Validators.minLength(6)
       ])
     },[
       Validators.required

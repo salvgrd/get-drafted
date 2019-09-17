@@ -1,0 +1,47 @@
+
+.ubuntu{
+    font-family: 'Ubuntu';
+  }
+.opensans{
+    font-family: 'Open Sans', sans-serif;
+}
+/*Header Styles*/
+.nav-link:hover{
+    cursor: pointer;
+}
+
+div.body-container{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.cont-login{
+    border-radius: 1.5%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+.centrar{
+    text-align: center;
+}
+
+.lineatitulo{
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.btn{
+    text-align: right;
+}
+
+.error{
+    color: red;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80%
+}
+/*Revisar Esto*/
+@media (max-width: 768px) {
+    .login-lg {
+        display: none;
+    }
+}
