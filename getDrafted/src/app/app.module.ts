@@ -16,6 +16,8 @@ import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.compo
 import { FiltroComponent } from './filtro/filtro.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatStepperModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
@@ -42,6 +44,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,

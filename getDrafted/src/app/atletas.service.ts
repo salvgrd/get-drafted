@@ -9,11 +9,18 @@ import { environment } from 'src/environments/environment';
 export class AtletasService {
 
   baseUrl: string;
-
+  loggedAs: string
   constructor(private http: HttpClient) { 
     this.baseUrl = "http://localhost:3000/api/";
+    this.loggedAs = this.readLoggedAs();
   }
 
+  readLoggedAs(){
+    if (localStorage.getItem('token-atleta') != null) return 'atleta'; 
+    if (localStorage.getItem('token-sponsor') != null) return 'sponsor';
+    return 'out';
+  }
+  
   setHeaders(){
     return {
       headers: new HttpHeaders(environment.auth_key)
