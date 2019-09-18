@@ -15,29 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/landing']" fragment="services" (click)="onAnchorClick()">Nuestra App</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registrate</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" [routerLink]="['/registro-atleta']">Atleta</a>
-              <a class="dropdown-item" [routerLink]="['/registro-sponsor']">Sponsor</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown navbar-toggler">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
-                <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
-            </div>
-        </li>
       </ul>
     </div>
-    <li class="navbar-nav nav-item dropleft login-lg mr-5"> <!-- REVISAR SCROLL -->
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
-                <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
-        </div>
-    </li>
+    
   </nav>
 </header>
 <div class="hero container-fluid ubuntu">

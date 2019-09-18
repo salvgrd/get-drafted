@@ -1,32 +1,10 @@
-<header>
-        <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu pb-1 pt-1">
-          <a class="navbar-brand" href="#">GetDrafted</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/landing']">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registrate</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" [routerLink]="['/registro-atleta']">Atleta</a>
-                  <a class="dropdown-item" [routerLink]="['/registro-sponsor']">Sponsor</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-</header>
-
+<app-header></app-header>
 <div class="container-fluid body-container ubuntu">
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
         <div class="container-fluid cont-login shadow-lg p-3 bg-white rounded">
-            <h4 class="centrar mb-2">Sign Up</h4>
+            <h4 class="centrar mb-2">Log In</h4>
             <hr class="lineatitulo">
             <h4 class="centrar mb-4">Área Atleta</h4>
             <form novalidate [formGroup]="login" (ngSubmit)="onLogin()">
@@ -35,11 +13,11 @@
                     <input type="text" class="form-control" formControlName="correo">
                     <p class="error"
                         *ngIf="login.controls['correo'].errors?.required && login.controls['correo'].touched">
-                        El campo Email es requerido.
+                        Requerido.
                     </p>
                     <p class="error"
                         *ngIf="login.controls['correo'].errors?.pattern && login.controls['correo'].touched ">
-                        No has insertado un Email.
+                        Debe ser un Email.
                     </p>
                 </div>
                 <div class="form-group">
@@ -47,10 +25,10 @@
                     <input type="password" class="form-control" formControlName="password">
                     <p class="error"
                         *ngIf="login.controls['password'].errors?.required && login.controls['password'].touched">
-                        El campo Contraseña es requerido.
+                        Requerido.
                     </p>
                 </div>
-                    <input type="submit" value="Sign Up" [disabled]="!login.valid" class="btn btn-toolbar btn-warning mt-4 ml-auto">
+                    <input type="submit" value="Log In" [disabled]="!login.valid" class="btn btn-toolbar btn-warning mt-4 ml-auto">
             </form>
         </div>
     </div>

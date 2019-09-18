@@ -33,9 +33,9 @@ export class LoginFormComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
-          console.log(response);
           localStorage.setItem('token-atleta', response['token']);
-          alert('Login succesfull');
+          localStorage.setItem('user-id', response['userId']);
+          this.router.navigate([`/atleta/${response['userId']}`]);
         }
       })
       .catch((err) => {

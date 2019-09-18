@@ -16,6 +16,8 @@ import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.compo
 import { FiltroComponent } from './filtro/filtro.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -39,6 +41,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
     BrowserAnimationsModule
   ],
   providers: [],
