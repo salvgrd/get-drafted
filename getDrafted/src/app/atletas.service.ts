@@ -10,11 +10,13 @@ export class AtletasService {
 
   baseUrl: string;
   loggedAs: string;
+  loggedAsId: string;
   loggedIn: boolean;
   constructor(private http: HttpClient) { 
     this.baseUrl = "http://localhost:3000/api/";
     this.loggedAs = this.readLoggedAs();
     this.loggedIn = this.isLoggedIn();
+    this.loggedAsId = localStorage.getItem('user-id')
   }
   isLoggedIn(){
     if (localStorage.length != 0) return true;
@@ -25,13 +27,12 @@ export class AtletasService {
     if (localStorage.getItem('token-sponsor') != null) return 'sponsor';
     return 'out';
   }
-  
   setHeaders(){
     return {
       headers: new HttpHeaders(environment.auth_key)
     }
   }
-
+  // peticiones a backend
   getAllAtletas() {
     let httpOptions = this.setHeaders()
     let response = this.http.get(`${this.baseUrl}atletas?format=json`, httpOptions).toPromise();

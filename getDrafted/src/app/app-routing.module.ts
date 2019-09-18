@@ -9,6 +9,7 @@ import { FiltroComponent } from './filtro/filtro.component';
 import { LoginFormComponent } from './login-form/login-form.component'
 import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
 import { LoggedInGuard } from './logged-in.guard';
+import { LoggedOutGuard } from './logged-out.guard';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'registro-sponsor', component: FormularioSponsorComponent},
   { path: 'atleta/:userid', component: UserProfileComponent},
   { path: 'sponsor/:userid', component: SponsorProfileComponent},
-  { path: 'buscar', component: FiltroComponent},
+  { path: 'buscar', component: FiltroComponent, canActivate: [LoggedOutGuard]},
   { path: 'login', component: LoginFormComponent, canActivate: [LoggedInGuard]},
   { path: 'login-empresas', component: LoginEmpresasComponent}
   // { path: 'info', component: ContactComponent },

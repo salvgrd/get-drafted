@@ -34,6 +34,7 @@ export class LoginFormComponent implements OnInit {
           alert(response['error']);
         } else {
           localStorage.setItem('token-atleta', response['token']);
+          localStorage.setItem('user-id', response['userId']);
           this.router.navigate([`/atleta/${response['userId']}`]);
         }
       })
