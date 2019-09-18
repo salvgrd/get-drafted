@@ -8,6 +8,7 @@ import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.compo
 import { FiltroComponent } from './filtro/filtro.component';
 import { LoginFormComponent } from './login-form/login-form.component'
 import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'atleta/:userid', component: UserProfileComponent},
   { path: 'sponsor/:userid', component: SponsorProfileComponent},
   { path: 'buscar', component: FiltroComponent},
-  { path: 'login', component: LoginFormComponent},
+  { path: 'login', component: LoginFormComponent, canActivate: [LoggedInGuard]},
   { path: 'login-empresas', component: LoginEmpresasComponent}
   // { path: 'info', component: ContactComponent },
   // { path: 'pricing', component: PricingComponent, canActivate: [TestGuard] },

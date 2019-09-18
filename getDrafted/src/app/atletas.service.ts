@@ -9,12 +9,17 @@ import { environment } from 'src/environments/environment';
 export class AtletasService {
 
   baseUrl: string;
-  loggedAs: string
+  loggedAs: string;
+  loggedIn: boolean;
   constructor(private http: HttpClient) { 
     this.baseUrl = "http://localhost:3000/api/";
     this.loggedAs = this.readLoggedAs();
+    this.loggedIn = this.isLoggedIn();
   }
-
+  isLoggedIn(){
+    if (localStorage.length != 0) return true;
+    return false;
+  }
   readLoggedAs(){
     if (localStorage.getItem('token-atleta') != null) return 'atleta'; 
     if (localStorage.getItem('token-sponsor') != null) return 'sponsor';
