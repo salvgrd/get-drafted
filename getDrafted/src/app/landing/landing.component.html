@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu">
+  <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu pt-1 pb-1">
     <a class="navbar-brand" href="#">GetDrafted</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -15,17 +15,29 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/landing']" fragment="services" (click)="onAnchorClick()">Nuestra App</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/landing']" fragment="register" (click)="onAnchorClick()">Registrate</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registrate</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/registro-atleta']">Atleta</a>
+              <a class="dropdown-item" [routerLink]="['/registro-sponsor']">Sponsor</a>
+            </div>
         </li>
-        <li class="nav-item navbar-toggler">
-          <a class="nav-link">Login</a>
+        <li class="nav-item dropdown navbar-toggler">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
+                <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
+            </div>
         </li>
       </ul>
     </div>
-    <span class="navbar-text login-lg">
-        <a class="nav-link" routerLink="/login">Login</a>
-    </span>
+    <li class="navbar-nav nav-item dropleft login-lg mr-5"> <!-- REVISAR SCROLL -->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
+                <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
+        </div>
+    </li>
   </nav>
 </header>
 <div class="hero container-fluid ubuntu">
@@ -44,25 +56,21 @@
         <div class="container text-center">
             <h3 class="font-weight-bold ubuntu">NUESTROS SOCIOS</h3>
             <hr class="mb-5 lineatitulo opensans">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita earum delectus soluta debitis
-                quidem cupiditate nisi odit laboriosam, praesentium quisquam!</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis praesentium dolor perferendis a
-                quos aliquid totam tempora iste, sed alias quam. Quo suscipit a laborum id veritatis earum harum
-                minima.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam vero! Assumenda vitae soluta
-                dolore ipsa qui pariatur, quo voluptate consequatur reprehenderit.</p>
+            <p>Nuestros Socios se encargan del patrocinio deportivo, es un tipo de patrocinio especializado en el deporte así como en los valores que el deporte pueda transmitir asociando una marca o producto a un club, deportista o evento.</p>
+            <p>Es una realidad que el deporte se ha transformado desde un mero hobby o actividad física saludable de principios del S. XX en un sector a tener en cuenta en una economía, lo cual provoca la profesionalización de los deportistas, del propio sector y de todos sus niveles. </p>
+            <p>Un sector tan amplio que no se reduce tan solo a los equipos profesionales del más alto nivel, sino que engloba a su vez tanto pabellones deportivos municipales con su oferta de actividades, como de los clubes y gimnasios privados, la venta de material deportivo, el patrocinio de una entidad deportiva por parte de una determinada empresa comercial, o la organización de macro eventos deportivos (Olimpiadas, competiciones de alcance europeo, mundial, etc.)</p>
         </div>
         <div class="container">
             <hr class="mb-5 lineatitulo">
             <div class="container-flex row mb-5">
                 <div id="divimg1" class="imagen-seccion2 container col-4">
-                    <img class="img-sponsors" src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?cs=srgb&dl=accion-agua-atleta-863988.jpg&fm=jpg" alt="Card image cap">
+                    <img class="img-sponsors" src="https://logosmarcas.com/wp-content/uploads/2018/03/Adidas-s%C3%ADmbolo.png" alt="Card image cap">
                 </div>
                 <div id="divimg2" class="imagen-seccion2 container col-4">
-                    <img class="img-sponsors" src="https://images.pexels.com/photos/217872/pexels-photo-217872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+                    <img class="img-sponsors" src="https://s3-eu-central-1.amazonaws.com/centaur-wp/designweek/prod/content/uploads/2019/01/16142458/nike-swoosh.jpg" alt="Card image cap">
                 </div>
                 <div id="divimg3" class="imagen-seccion2 container col-4">
-                    <img class="img-sponsors" src="https://images.pexels.com/photos/163351/girl-boxer-ring-boxing-pear-163351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+                    <img class="img-sponsors" src="https://i.pinimg.com/originals/7b/c9/c8/7bc9c8c7cd6bc7797133eb019478ed7c.jpg" alt="Card image cap">
                 </div>
             </div>
         </div>
@@ -72,41 +80,29 @@
             <h2 class="ubuntu font-italic">GetDrafted</h2>
         </div>
             <article class="container-fluid py-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <img class="img-fluid" src="https://images.pexels.com/photos/28061/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <h3 class="py-3 pb-3 ubuntu">Feature 1</h3>
-                            <div class="d-none d-md-block opensans">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
-                                    iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
-                                    fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
-                                    quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
-                                    nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
-                                    atque tempore consequatur ullam!</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <img class="img-fluid" src="https://images.pexels.com/photos/38296/cycling-bicycle-riding-sport-38296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h3 class="py-3 pb-3 ubuntu">Ciclismo</h3>
+                                <div class="d-none d-md-block opensans">
+                                    <p>El ciclismo de competición es un deporte en el que se utilizan distintos tipos de bicicletas. Hay varias modalidades o disciplinas en el ciclismo de competición como ciclismo en carretera, ciclismo en pista, ciclismo de montaña, trial, ciclocross y BMX y dentro de ellas varias especialidades. El ciclismo de competición es reconocido como un deporte olímpico. La Unión Ciclista Internacional es el organismo gobernante mundial para el ciclismo y eventos internacionales de ciclismo de competición. </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </article>
+        
             <article class="container-fluid py-5 bg-light">
                 <div class="container">
                     <div class="row ">
                         <div class="col-12 col-md-6">
-                            <h3 class="py-3 pb-3 ubuntu">Feature 2</h3>
+                            <h3 class="py-3 pb-3 ubuntu">CrossFit</h3>
                             <div class="d-none d-md-block opensans">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
-                                    iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
-                                    fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
-                                    quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
-                                    nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
-                                    atque tempore consequatur ullam!</p>
+                                <p>CrossFit es una técnica de entrenamiento que concatena movimientos de diferentes disciplinas, consiste en acometer un programa de ejercicios (flexiones, tracción, etc), en un tiempo determinado y con un número definido de veces. </p>
+                                <p>Cada año empieza una nueva temporada que se denomina "Open". Cualquier persona puede inscribirse para competir en cinco sesiones de entrenamiento durante cinco semanas y publicar sus puntuaciones avaladas por un instructor certificado por CrossFit en la página oficial de CrossFit Games. En el año 2014, el Open llegó a más de 209 mil atletas de todo el mundo. </p>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
@@ -115,56 +111,47 @@
                     </div>
                 </div>
             </article>
+        
             <article class="container-fluid py-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <img class="img-fluid" src="https://images.pexels.com/photos/34514/spot-runs-start-la.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <h3 class="py-3 pb-3 ubuntu">Feature 3</h3>
-                                <div class="d-none d-md-block opensans">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
-                                        iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
-                                        fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
-                                        quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
-                                        nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
-                                        atque tempore consequatur ullam!</p>
-                                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img class="img-fluid" src="https://images.pexels.com/photos/2261485/pexels-photo-2261485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 class="py-3 pb-3 ubuntu">Halterofilia</h3>
+                            <div class="d-none d-md-block opensans">
+                                <p>La halterofilia o levantamiento de pesas es un deporte que consiste en el levantamiento del máximo peso posible en una barra en cuyos extremos se fijan varios discos, que son los que determinan el peso final que se levanta. A dicho conjunto se denomina haltera.</p>
+                                <p>Existen dos modalidades de competición: arrancada y dos tiempos o envión. En la primera de ellas se trata de levantar las pesas, de una vez y sin interrupción, desde el suelo hasta la total extensión de los brazos sobre la cabeza. En la segunda se ha de conseguir lo mismo, pero se permite una interrupción del movimiento cuando la barra se halla a la altura de los hombros. </p>
                             </div>
                         </div>
                     </div>
+                </div>
             </article>
+             
             <article class="container-fluid py-5 bg-light">
                     <div class="container">
                         <div class="row ">
                             <div class="col-12 col-md-6">
-                                <h3 class="py-3 pb-3 ubuntu">Feature 4</h3>
+                                <h3 class="py-3 pb-3 ubuntu">Natación</h3>
                                 <div class="d-none d-md-block opensans">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel totam at laborum
-                                        iure excepturi ipsa eveniet! Asperiores rerum repellendus, reprehenderit unde
-                                        fugiat aspernatur saepe similique velit culpa vitae, exercitationem quia.</p>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum culpa fuga nihil
-                                        quisquam distinctio ut et aut nesciunt accusantium. Quasi?</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis, harum
-                                        nemo facere culpa nihil necessitatibus voluptate vero aliquam recusandae. Illo
-                                        atque tempore consequatur ullam!</p>
+                                    <p>El objetivo de la natación competitiva es la de romper las marcas personales o los récords mundiales. Cuando se nada debe haber la menor resistencia al agua con el fin de obtener la máxima velocidad. Sin embargo, algunos nadadores profesionales que no poseen una clasificación nacional o mundial son considerados los mejores en lo que se refiere a sus habilidades técnicas. Típicamente, un nadador profesional pasa por un ciclo de formación en la que el cuerpo está sobrecargado con el trabajo al principio, luego la carga de trabajo se disminuye en la etapa final.</p>
+                                    <p>La natación es un evento, donde los atletas masculinos y femeninos compiten en diferentes estilos. Los eventos olímpicos se llevan a cabo en una piscina de 50 metros. Hay cuarenta eventos oficialmente reconocidos de natación en la actualidad. </p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <img class="img-fluid" src="https://images.pexels.com/photos/38296/cycling-bicycle-riding-sport-38296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                                <img class="img-fluid" src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?cs=srgb&dl=accion-agua-atleta-863988.jpg&fm=jpg">
                             </div>
                         </div>
                     </div>
             </article>
     </section>
     <section id="register" #register>
-            <div class="container-fluid bg-dark text-center text-light py-4">
+            <div class="container-fluid text-center ">
                 <h2 class="ubuntu font-italic">Registrate Ahora</h2>
+                <hr class="lineatitulo">
             </div>
-            <div class="container-fluid bg-light py-5">
+            <div class="container-fluid pb-5">
                 <div class="container text-center">
                     <a routerLink="/registro-atleta" class="btn btn-outline-dark boton ubuntu mr-1">Registrate como Atleta</a>
                     <a routerLink="/registro-sponsor" class="btn btn-outline-dark boton ubuntu ml-1">Registrate como Sponsor</a>

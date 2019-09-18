@@ -1,203 +1,189 @@
-<!-- <div class="container">
-    <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="">Nombre Empresa</label>
-            <input type="text" class="form-control" formControlName="nombre">
-            <p class="error"
-                *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
-                El campo Nombre Empresa es requerido.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
-                El campo Nombre Empresa solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
-                caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}}
-                caracteres.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['nombre'].errors?.minlength && formulario.controls['nombre'].touched">
-                El campo Nombre Sponsor necesita como minimo {{formulario.controls['nombre'].errors?.minlength.requiredLength}}
-                caracteres.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Nombre Persona Responsable</label>
-            <input type="text" class="form-control" formControlName="nombre_responsable">
-            <p class="error"
-                *ngIf="formulario.controls['nombre_responsable'].errors?.required && formulario.controls['nombre_responsable'].touched">
-                El campo Nombre Persona Responsable es requerido.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['nombre_responsable'].errors?.maxlength && formulario.controls['nombre_responsable'].touched">
-                El campo Nombre Persona Responsable solo puede tener como máximo {{formulario.controls['nombre_responsable'].errors?.maxlength.requiredLength}}
-                caracteres. Tú has insertado {{formulario.controls['nombre_responsable'].errors?.maxlength.actualLength}}
-                caracteres.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['nombre_responsable'].errors?.minlength && formulario.controls['nombre_responsable'].touched">
-                El campo Nombre Persona Responsable necesita como minimo {{formulario.controls['nombre_responsable'].errors?.minlength.requiredLength}}
-                caracteres.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Biografía Sponsor</label>
-            <input type="text" class="form-control" formControlName="bio">
-            <p class="error"
-                *ngIf="formulario.controls['bio'].errors?.required && formulario.controls['bio'].touched">
-                El campo Biografía es requerido.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['bio'].errors?.maxlength && formulario.controls['bio'].touched">
-                El campo Biografía solo puede tener como máximo {{formulario.controls['bio'].errors?.maxlength.requiredLength}}
-                caracteres. Tú has insertado {{formulario.controls['bio'].errors?.maxlength.actualLength}}
-                caracteres.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['bio'].errors?.minlength && formulario.controls['bio'].touched">
-                El campo Biografía necesita como minimo {{formulario.controls['bio'].errors?.minlength.requiredLength}}
-                caracteres.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Telefono</label>
-            <input type="text" class="form-control" formControlName="telefono">
-            <p class="error"
-                *ngIf="formulario.controls['telefono'].errors?.required && formulario.controls['telefono'].touched">
-                El campo Telefono es requerido.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['telefono'].errors?.maxlength && formulario.controls['telefono'].touched">
-                El campo Telefono solo puede tener como máximo {{formulario.controls['telefono'].errors?.maxlength.requiredLength}}
-                caracteres. Tú has insertado {{formulario.controls['telefono'].errors?.maxlength.actualLength}}
-                caracteres.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['telefono'].errors?.minlength && formulario.controls['telefono'].touched">
-                El campo Telefono necesita como minimo {{formulario.controls['telefono'].errors?.minlength.requiredLength}}
-                caracteres.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Email</label>
-            <input type="email" class="form-control" formControlName="correo">
-            <p class="error"
-                *ngIf="formulario.controls['correo'].errors?.required && formulario.controls['correo'].touched">
-                Este campo es requerido.
-            </p>
-            <p class="error"
-                *ngIf="formulario.controls['correo'].errors?.pattern && formulario.controls['correo'].touched">
-                Este email no es valido.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Pais</label>
-            <select type="text" class="form-control" formControlName="ubicacion">
-                <option value="spain">España</option>
-                <option value="usa">EE.UU</option>
-                <option value="vzla">Venezuela</option>
-            </select>
-            <p class="error"
-                *ngIf="formulario.controls['ubicacion'].errors?.required && formulario.controls['ubicacion'].touched">
-                Por favor seleccione una opcion.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Password</label>
-            <input type="password" class="form-control" formControlName="password">
-            <p class="error"
-                *ngIf="formulario.controls['password'].errors?.pattern">
-                Esta contraseña no es valida.
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="">Repite Password</label>
-            <input type="password" class="form-control" formControlName="password_repeat">
-            <p class="error"
-                *ngIf="formulario.controls['password_repeat'].errors?.passwordvalidator">
-                Las contraseñas no coinciden.
-            </p>
-        </div>
-        <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-block btn-primary">
-    </form>
-</div> -->
+<header>
+        <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu pt-1 pb-1">
+          <a class="navbar-brand" href="#">GetDrafted</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/landing']" fragment="partners" (click)="onAnchorClick()">Nuestros socios</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/landing']" fragment="services" (click)="onAnchorClick()">Nuestra App</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registrate</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/registro-atleta']">Atleta</a>
+                  </div>
+              </li>
+              <li class="nav-item dropdown navbar-toggler">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
+                      <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
+                  </div>
+              </li>
+            </ul>
+          </div>
+          <li class="navbar-nav nav-item dropleft login-lg mr-5"> <!-- REVISAR SCROLL -->
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
+                      <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
+              </div>
+          </li>
+        </nav>
+</header>
 
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button> -->
-  <!-- <form novalidate [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> -->
-    <mat-horizontal-stepper #stepper>
-        <mat-step [stepControl]="registerForm">
-        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> <!-- Posible Cambio -->
-            <ng-template matStepLabel>Información de Contacto</ng-template>
-            <div class="row">
-                <mat-form-field>
-                <input matInput placeholder="Nombre de la compañia" formControlName="nombre" required >
-                </mat-form-field>
-            </div>
-            <!-- <div class="row">
-                <mat-form-field>
-                    <input matInput placeholder="Nombre y apellidos, Persona Responsable" formControlName="nombre_contacto" 
-                    [(ngModel)]="user.nombre_contacto"required>
-                </mat-form-field>
-            </div> -->
-            <div>
-            <button mat-button matStepperNext type="button" [disabled]="!registerForm.valid">Siguiente</button>
-            </div>
-        </form>
-        </mat-step>
-        <mat-step [stepControl]="registerForm">
-        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> <!-- Posible Cambio -->
-            <ng-template matStepLabel>Datos de Ubicación</ng-template>
-            <div class="row">
-                <mat-form-field>
-                <input matInput placeholder="Ubicación" formControlName="ubicacion" required>
-                </mat-form-field>
-            </div>
-            <div class="row">
-                <mat-form-field>
-                <input matInput placeholder="Telefono" formControlName="telefono" required>
-                </mat-form-field>
-            </div>
-            <div>
-            <button mat-button matStepperPrevious type="button">Back</button>
-            <button mat-button matStepperNext type="button">Next</button>
-            </div>
-        </form>
-        </mat-step>
-        <mat-step [stepControl]="registerForm" >
-            <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()"> <!-- Posible Cambio -->
-                <ng-template matStepLabel>Datos de Acceso</ng-template>
-                <div class="row">
-                    <mat-form-field>
-                        <input matInput placeholder="Correo" formControlName="correo" required>
-                    </mat-form-field>
+
+<div class="container-fluid ubuntu">
+<div class="container cont-reg shadow-lg p-3 bg-white rounded">
+        <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-4">
+                <h4>Registro Sponsor</h4>
+                <hr class="lineatitulo">
+                <h5>Algunos beneficios:</h5>
+                <div class="beneficios">
+                    <p>· Mejorar la conciencia de marca, producto y servicio de los consumidores.</p>
+                    <p>· Incrementar las ventas de un producto/servicio específico.</p>
+                    <p>· Crear una “transferencia de imagen”. Donde los valores del deporte sean asociados a la marca patrocinada, mejorando así la imagen.</p>
+                    <p>· Crear valor de marca.</p>
+                    <p>· Promover la fidelidad de marca. (Incrementando la ratio de compra).</p>
                 </div>
-                <div class="row">
-                    <mat-form-field>
-                        <input matInput placeholder="Contraseña" class="form-control" formControlName="password" required>
-                    </mat-form-field>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Nombre Empresa</label>
+                    <input type="text" class="form-control" formControlName="nombre">
+                    <p class="error"
+                        *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
+                        El campo Nombre Empresa es requerido.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
+                        El campo Nombre Empresa solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
+                        caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}}
+                        caracteres.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['nombre'].errors?.minlength && formulario.controls['nombre'].touched">
+                        El campo Nombre Sponsor necesita como minimo {{formulario.controls['nombre'].errors?.minlength.requiredLength}}
+                        caracteres.
+                    </p>
                 </div>
-                <div class="row">
-                    <mat-form-field>
-                        <input matInput placeholder="Repetir contraseña" class="form-control" formControlName="password_repeat" required>
-                        <p class="error"
-                *ngIf="registerForm.controls['password_repeat'].errors?.passwordvalidator">
-                Las contraseñas no coinciden.
-            </p>
-                    </mat-form-field>
+                <!-- <div class="form-group">
+                    <label for="">Nombre Persona Responsable</label>
+                    <input type="text" class="form-control" formControlName="nombre_contacto">
+                    <p class="error"
+                        *ngIf="formulario.controls['nombre_contacto'].errors?.required && formulario.controls['nombre_contacto'].touched">
+                        El campo Nombre Persona Responsable es requerido.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['nombre_contacto'].errors?.maxlength && formulario.controls['nombre_contacto'].touched">
+                        El campo Nombre Persona Responsable solo puede tener como máximo {{formulario.controls['nombre_contacto'].errors?.maxlength.requiredLength}}
+                        caracteres. Tú has insertado {{formulario.controls['nombre_contacto'].errors?.maxlength.actualLength}}
+                        caracteres.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['nombre_contacto'].errors?.minlength && formulario.controls['nombre_contacto'].touched">
+                        El campo Nombre Persona Responsable necesita como minimo {{formulario.controls['nombre_contacto'].errors?.minlength.requiredLength}}
+                        caracteres.
+                    </p>
+                </div> -->
+
+
+                <!-- <div class="form-group">
+                    <label for="">Biografía Sponsor</label>
+                    <input type="text" class="form-control" formControlName="bio">
+                    <p class="error"
+                        *ngIf="formulario.controls['bio'].errors?.required && formulario.controls['bio'].touched">
+                        El campo Biografía es requerido.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['bio'].errors?.maxlength && formulario.controls['bio'].touched">
+                        El campo Biografía solo puede tener como máximo {{formulario.controls['bio'].errors?.maxlength.requiredLength}}
+                        caracteres. Tú has insertado {{formulario.controls['bio'].errors?.maxlength.actualLength}}
+                        caracteres.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['bio'].errors?.minlength && formulario.controls['bio'].touched">
+                        El campo Biografía necesita como minimo {{formulario.controls['bio'].errors?.minlength.requiredLength}}
+                        caracteres.
+                    </p>
+                </div> -->
+                <div class="form-group">
+                    <label for="">Telefono</label>
+                    <input type="text" class="form-control" formControlName="telefono">
+                    <p class="error"
+                        *ngIf="formulario.controls['telefono'].errors?.required && formulario.controls['telefono'].touched">
+                        El campo Telefono es requerido.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['telefono'].errors?.maxlength && formulario.controls['telefono'].touched">
+                        El campo Telefono solo puede tener como máximo {{formulario.controls['telefono'].errors?.maxlength.requiredLength}}
+                        caracteres. Tú has insertado {{formulario.controls['telefono'].errors?.maxlength.actualLength}}
+                        caracteres.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['telefono'].errors?.minlength && formulario.controls['telefono'].touched">
+                        El campo Telefono necesita como minimo {{formulario.controls['telefono'].errors?.minlength.requiredLength}}
+                        caracteres.
+                    </p>
                 </div>
-                <div>
-                    <button mat-button matStepperPrevious type="button">Back</button>
-                    <button mat-button type="submit" class="mat-raised-button mat-primary" [disabled]="!registerForm.valid" matStepperNext>Registrar</button>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" formControlName="correo">
+                    <p class="error"
+                        *ngIf="formulario.controls['correo'].errors?.required && formulario.controls['correo'].touched">
+                        Este campo es requerido.
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.controls['correo'].errors?.pattern && formulario.controls['correo'].touched">
+                        Este email no es valido.
+                    </p>
                 </div>
-            </form>
-        </mat-step>
-        <mat-step>
-        <ng-template matStepLabel>Terminado</ng-template>
-        Felicidades, ya formas parte de GetDrafTed!
-        <div>
-            <button mat-button [routerLink]="['/login']">Pulsa para iniciar sección</button>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Pais</label>
+                    <select type="text" class="form-control" formControlName="ubicacion">
+                        <option value="spain">España</option>
+                        <option value="usa">EE.UU</option>
+                        <option value="vzla">Venezuela</option>
+                    </select>
+                    <p class="error"
+                        *ngIf="formulario.controls['ubicacion'].errors?.required && formulario.controls['ubicacion'].touched">
+                        Por favor seleccione una opcion.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                    <p class="error"
+                        *ngIf="formulario.controls['password'].errors?.pattern">
+                        Debe contener al menos una letra, al menos un número y tener más de 6 caracteres.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="">Repite Password</label>
+                    <input type="password" class="form-control" formControlName="password_repeat">
+                    <p class="error"
+                        *ngIf="formulario.controls['password_repeat'].errors?.passwordvalidator">
+                        Las contraseñas no coinciden.
+                    </p>
+                </div>
+                <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-toolbar btn-warning mt-5 ml-auto">
+            </div>
         </div>
-        </mat-step>
-</mat-horizontal-stepper>
-  
+    </form>
+</div>
+</div>
+
+<app-footer class="fondo"></app-footer>
 

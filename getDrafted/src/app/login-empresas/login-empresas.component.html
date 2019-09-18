@@ -1,18 +1,21 @@
 
 <header>
-        <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu">
+        <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu pb-1 pt-1">
           <a class="navbar-brand" href="#">GetDrafted</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="navbar-text">
+              <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/landing']">Home</a>
               </li>
-              <!-- CREAR un DESPLEGABLE -->
-              <li class="navbar-text">
-                <a class="nav-link" [routerLink]="['/landing']" fragment="register" (click)="onAnchorClick()">Register</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registrate</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" [routerLink]="['/registro-atleta']">Atleta</a>
+                  <a class="dropdown-item" [routerLink]="['/registro-sponsor']">Sponsor</a>
+                </div>
               </li>
 
             </ul>

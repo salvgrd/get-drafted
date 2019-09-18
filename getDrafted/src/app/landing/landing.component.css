@@ -4,6 +4,11 @@
 .opensans{
     font-family: 'Open Sans', sans-serif;
 }
+
+main{
+    background-color: whitesmoke;
+}
+
 /*Header Styles*/
 .nav-link:hover{
     cursor: pointer;
@@ -54,7 +59,7 @@ div.container.botones>p{
 }
 a.boton.active:hover{
     color: white;
-    background-color: #8f97a0;
+    background-color: transparent;
     border-color: #8f97a0;
 }
 /*Body Styles*/
@@ -76,4 +81,8 @@ div.container.imagen-seccion2{
     filter: grayscale(50%);
     transition: 800ms;
     transform: scale(1.05);
+}
+
+.lineatitulo{
+    background-color: rgba(255, 255, 255, 0.5)
 }

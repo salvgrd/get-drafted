@@ -1,12 +1,9 @@
-* {
+.ubuntu{
   font-family: 'Ubuntu';
-  font-weight: medium;
 }
-
-.nav-link:hover{
-  cursor: pointer;
+.opensans{
+  font-family: 'Open Sans', sans-serif;
 }
-
 @media (max-width: 768px) {
     .login-lg {
       display: none;

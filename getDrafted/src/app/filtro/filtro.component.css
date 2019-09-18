@@ -1,3 +1,4 @@
+
 .ubuntu{
   font-family: 'Ubuntu';
 }
@@ -6,17 +7,10 @@
 }
 
 .container-fluid{
-  background-color: #555;
-  /* background-blend-mode: soft-light; */
-  padding-top: 1%;
-  padding-bottom: 1%;
-  transition: background-color 400ms linear;
-}
-.container-fluid:hover{
-  cursor: pointer;
-  background: rgb(112, 109, 109);
-  background-blend-mode: darken;
-  transition: background-color 400ms linear;
+  height: auto;
+  background-color: whitesmoke;
+  padding-top: 3%;
+  padding-bottom: 6%;
 }
 
 .userbox{
@@ -27,11 +21,21 @@
 
 .userbox:hover{
     cursor: pointer;
-    background: rgba(0,0,0,1);
-    background-blend-mode: luminosity;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: lighten;
     transition: background-color 200ms linear;
   }
 
 div.contbotones>button{
     margin: 10px;
+}
+
+.lineatitulo{
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+.fondo{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

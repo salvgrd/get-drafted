@@ -37,7 +37,6 @@ div.body-container{
 }
 
 div.body-container:hover{
-    cursor: pointer;
     background: #2d3338;
     transition: background-color 400ms linear;
 }
@@ -48,7 +47,14 @@ div.galeria img{
     max-width: 90%;
     max-height: 90%;
     border-radius: 8%;
+    transition: 800ms;
 }
+
+div.galeria img:hover{
+    transition: 800ms;
+    transform: scale(1.05);
+}
+
 div.centrar{
     text-align: center;
 }

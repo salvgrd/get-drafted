@@ -1,27 +1,42 @@
 <header>
-  <nav class="navbar navbar-expand-lg py-0 navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">GetDrafted</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/landing']" fragment="services" (click)="onAnchorClick()">Explore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">Register</a>
-        </li>
-        <li class="nav-item navbar-toggler">
-          <a class="nav-link">Login</a>
-        </li>
-      </ul>
-    </div>
-    <span class="navbar-text login-lg">
-        <a class="nav-link">Login</a>
-    </span>
-  </nav>
+    <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu pt-1 pb-1">
+      <a class="navbar-brand" href="#">GetDrafted</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/landing']" fragment="partners" (click)="onAnchorClick()">Nuestros socios</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/landing']" fragment="services" (click)="onAnchorClick()">Nuestra App</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registrate</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]="['/registro-atleta']">Atleta</a>
+                <a class="dropdown-item" [routerLink]="['/registro-sponsor']">Sponsor</a>
+              </div>
+          </li>
+          <li class="nav-item dropdown navbar-toggler">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
+                  <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <li class="navbar-nav nav-item dropleft login-lg mr-5"> <!-- REVISAR SCROLL -->
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" [routerLink]="['/login']">Atleta</a>
+                  <a class="dropdown-item" [routerLink]="['/login-empresas']">Sponsor</a>
+          </div>
+      </li>
+    </nav>
 </header>

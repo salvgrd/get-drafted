@@ -11,15 +11,14 @@
 }
 
 div.body-container{
-    height: 100%;
+    height: calc(100vh - 104px);
     width: 100%;
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .cont-login{
     border-radius: 1.5%;
     margin-top: 15%;
-    margin-bottom: 15%;
 }
 
 .centrar{
@@ -44,4 +43,10 @@ div.body-container{
     .login-lg {
         display: none;
     }
+}
+
+.fondo{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

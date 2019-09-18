@@ -1,3 +1,37 @@
-*{
+.ubuntu{
     font-family: 'Ubuntu';
+  }
+.opensans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid{
+    height: calc(100vh - 88px);
+    background-color: whitesmoke;
+    padding-top: 5%;
+}
+
+.lineatitulo{
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.cont-reg{
+    border-radius: 1.5%;
+}
+
+.beneficios{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80%;
+}
+
+.fondo{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.error{
+    color: red;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80%
 }

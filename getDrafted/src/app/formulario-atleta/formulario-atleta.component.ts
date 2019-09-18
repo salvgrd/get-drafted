@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AtletasService } from '../atletas.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { debounceTime } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
@@ -69,6 +68,7 @@ export class FormularioAtletaComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
+          console.log(response);
            alert('usuario registrado.')
         }
       })
@@ -97,6 +97,7 @@ export class FormularioAtletaComponent implements OnInit {
     if(passwordValue === passwordRepeatValue){
       return null;
     } else {
+      //REVISAR ESTE RETURN NO LO ENVIA//
       return { passwordvalidator: 'Las contraseñas no coinciden'}
     }
   }

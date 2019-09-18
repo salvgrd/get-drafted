@@ -16,10 +16,7 @@ import { SponsorProfileComponent } from './sponsor-profile/sponsor-profile.compo
 import { FiltroComponent } from './filtro/filtro.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
-import { MatStepperModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -42,12 +39,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
