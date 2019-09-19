@@ -3,6 +3,7 @@
 <div class="container cont-reg shadow-lg p-3 bg-white rounded">
     <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="row">
+
             <div class="col-4">
                 <h4>Registro Atleta</h4>
                 <hr class="lineatitulo">
@@ -18,6 +19,8 @@
                     <p>· Better silence than bullshit</p>
                 </div>
             </div>
+
+
             <div class="col-4">
                 <div class="form-group">
                     <label for="">Nombre</label>
@@ -72,8 +75,8 @@
                 <div class="form-group">
                     <label for="">Sexo</label>
                     <select type="text" class="form-control" formControlName="sexo">
-                        <option value="M">Hombre</option>
-                        <option value="F">Mujer</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
                         <option value="NA">Prefiero no elegir</option>
                     </select>
                     <p class="error"
@@ -82,7 +85,7 @@
                     </p>
                 </div>
                 <div class="form-group">
-                    <label for="">Pais</label>
+                    <label for="">Ubicación</label>
                     <select type="text" class="form-control" formControlName="ubicacion">
                         <option value="España">España</option>
                         <option value="USA">EE.UU</option>
@@ -98,10 +101,10 @@
                 <div class="form-group">
                     <label for="">Disciplina</label>
                     <select type="text" class="form-control" formControlName="disciplina">
-                        <option value="cycling">Ciclismo</option>
+                        <option value="Ciclismo">Ciclismo</option>
                         <option value="CrossFit">CrossFit</option>
                         <option value="Halterofilia">Halterofilia</option>
-                        <option value="swim">Natacion</option>
+                        <option value="Natacion">Natación</option>
                     </select>
                     <p class="error"
                         *ngIf="formulario.controls['disciplina'].errors?.required && formulario.controls['disciplina'].touched">

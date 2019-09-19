@@ -77,13 +77,11 @@ export class AtletasService {
     let response = this.http.post(`${this.baseUrl}empresas/login?format=json`, pForm, httpOptions).toPromise();
     return response;
   }
-/*   create(values): Promise<any> {
-    let httOptions = {
-      headers: new HttpHeaders({
-        'Authentication': localStorage.getItem('user-token')
-      })
-    }
-    return this.http.post<any>(this.baseUrl, values, httOptions).toPromise();
+  ////////////////////////////////////////////////////////////////REVISAR LLAMADA CON BACK
+  /* updateAtleta(pId) {
+    let httpOptions = this.setHeaders()
+    let response = this.http.post(`${this.baseUrl}atletas/update/${pId}?format=json`, pId, httpOptions).toPromise();
+    return response;
   } */
+
 }
-//Mas o menos es esto... para revision segun proyecto

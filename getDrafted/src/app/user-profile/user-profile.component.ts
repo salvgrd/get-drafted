@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AtletasService } from '../atletas.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -8,11 +10,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-
+  formulario: FormGroup;
+  editar: boolean = false;
   atleta: any;
+  atletaEnviado: any;
 
   constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) {
-   }
+    this.atleta = {};
+    this.atletaEnviado = {};
+
+    
+  }
 
   ngOnInit() {
     /* this.atletasService.getAtletaById()
@@ -26,12 +34,128 @@ export class UserProfileComponent implements OnInit {
         this.atletasService.getAtletaById(params.userid)
           .then((response) => {
             this.atleta = response;
+             this.createForm();
           })
           .catch((err) => {
             console.log(err);
           })
       });
+  }
 
+  createForm(){
+    this.formulario = new FormGroup({
+      nombre: new FormControl(this.atleta.nombre, [
+        Validators.required,
+        Validators.maxLength(30),
+        Validators.minLength(2)
+      ]),
+      apellidos: new FormControl(this.atleta.apellidos, [
+        Validators.required,
+        Validators.maxLength(50),
+        Validators.minLength(2)
+      ]),
+      sexo: new FormControl(this.atleta.sexo, [
+        Validators.required
+      ]),
+      correo: new FormControl(this.atleta.correo, [
+        Validators.required,
+        Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
+      ]),
+      telefono: new FormControl(this.atleta.telefono, [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(12)
+      ]),
+      disciplina: new FormControl(this.atleta.disciplina, [
+        Validators.required
+      ]),
+      ubicacion: new FormControl(this.atleta.ubicacion, [
+        Validators.required
+      ]),
+      edad: new FormControl(this.atleta.edad, [
+        Validators.required,
+        this.edadValidator
+      ]),
+      experiencia: new FormControl(this.atleta.experiencia, [
+        Validators.required
+      ]),
+      sponsor: new FormControl(this.atleta.sponsor, [
+        /* Validators.required */
+        /* me dijistes que todos tienen que se requeridos pero este no todos los atletas tienen */
+      ]),
+      marcas_personales: new FormControl(this.atleta.marcas_personales, [
+        Validators.required
+      ]),
+      bio: new FormControl(this.atleta.bio, [
+        Validators.required,
+        Validators.minLength(12),
+        Validators.maxLength(1000)
+      ]),
+      galeria: new FormControl(this.atleta.galeria, [
+        Validators.required
+      ]),
+      password: new FormControl(this.atleta.password, [
+        Validators.required,
+        Validators.pattern(/^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/)
+      ]),
+      password_repeat: new FormControl(this.atleta.password_repeat)
+    }, [
+        Validators.required,
+        this.equalPasswordValidator
+      ]);
+  }
+  onSubmit() {
+    this.editar = !this.editar;
+    console.log('toy aqui');
+    console.log(this.formulario.controls)
+    
+    ////Me imagino que aqui seria un metodo de update haciendo la llamada
+    //// Y luego getAtletById para que actualice perfil al pisar boton guardar
+    //// Si no me equivoco
+
+
+    /* this.atletasService.updateAtleta(this.formulario.value)
+      .then((response) => {
+        if (response['error']) {
+          alert(response['error']);
+        } else {
+          console.log(response);
+           alert('usuario actualizado.')
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      }) */
+  }
+
+  //Esto es para activar los ngIF mosca cuando se pisa boton editar
+  editarAtleta(){
+    this.editar =!this.editar;
+  }
+
+  edadValidator(control) {
+    let edadValue = control.value;
+    let edadMinima = 12;
+
+    if (edadValue >= edadMinima) {
+      // Correcto
+      return null;
+    } else {
+      // Incorrecto
+      return { edadvalidator: { edadminima: edadMinima } };
+    }
+  }
+
+  equalPasswordValidator(form) {
+    let passwordValue = form.controls['password'].value;
+    let passwordRepeatValue = form.controls['password_repeat'].value;
+
+    if(passwordValue === passwordRepeatValue){
+      return null;
+    } else {
+      //REVISAR ESTE RETURN NO LO ENVIA//
+      return { passwordvalidator: 'Las contraseñas no coinciden'}
+    }
   }
 
 }
