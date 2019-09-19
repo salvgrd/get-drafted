@@ -1,5 +1,5 @@
 *{
-    color: white;
+    color: black;
 }
 .ubuntu{
     font-family: 'Ubuntu';
@@ -9,10 +9,9 @@
 }
 
 div.cover-usuario{
-    background-image: url('https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-    background-size: cover;
+    background-image: url('https://www.lonepeakperformance.com/sites/default/files/page_header_images/lppt_bzn_performance-header2.jpg');
+    background-size: 100% 350%;
     background-position: center;
-    /* background-color: #343a40; */
     height: 22vh;
 }
 .perfil-pic-container img{
@@ -24,21 +23,16 @@ div.cover-usuario{
     /* z-index: 1; */
 }
 
-h3.nombre-perfil{
+/* h3.nombre-perfil{
     display: inline-block;
     margin-left: 3vh;
-}
+    color: black;
+} */
 
 div.body-container{
     height: 100%;
     width: 100%;
-    background-color: #343a40;
-    transition: background-color 400ms linear;
-}
-
-div.body-container:hover{
-    background: #2d3338;
-    transition: background-color 400ms linear;
+    background-color: whitesmoke;
 }
 
 div.galeria img{
@@ -59,25 +53,8 @@ div.centrar{
     text-align: center;
 }
 
-/* Marcas personales */
-.v-marca .count-number-no {
-	font-size: 40px;
-	font-weight: 500;
-	color: #16171d;
-}
-.v-marca .count-divider {
-	width: 100%;
-	text-align: center;
-	height: 1px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-.v-marca .count-divider span {
-	background: #e4e4e4;
-	width: 0px;
-	height: 3px;
-	display: inline-block;
-}
+	/* color: #ffa600e3; */
+
 
 .lineatitulo{
     background-color: rgba(255, 255, 255, 0.5)
