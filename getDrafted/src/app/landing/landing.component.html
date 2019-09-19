@@ -17,7 +17,17 @@
         </li>
       </ul>
     </div>
-    
+    <span class="navbar-text login-lg" [ngSwitch]="service.loggedIn">
+        <a class="nav-link" *ngSwitchCase="false" [routerLink]="['/login']">Login</a>
+        <div ngbDropdown *ngSwitchCase="true">
+          <a class="nav-link" ngbDropdownToggle>Username</a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Action</a>
+            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Another action</a>
+            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Something else here</a>
+          </div>
+        </div>
+    </span>
   </nav>
 </header>
 <div class="hero container-fluid ubuntu">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AtletasService } from '../atletas.service';
 
 @Component({
   selector: 'app-landing',
@@ -8,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LandingComponent implements OnInit {
 
-  constructor( private route: ActivatedRoute, private router: Router ) { }
+  constructor( private route: ActivatedRoute, private router: Router, public service: AtletasService ) { }
 
   ngOnInit() {
   }

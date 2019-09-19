@@ -18,6 +18,7 @@ export class AtletasService {
     this.loggedIn = this.isLoggedIn();
     this.loggedAsId = localStorage.getItem('user-id')
   }
+  // Status de loggin
   isLoggedIn(){
     if (localStorage.length != 0) return true;
     return false;

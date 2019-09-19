@@ -22,14 +22,14 @@
         </li>
       </ul>
     </div>
-    <span class="navbar-text login-lg">
-        <a class="nav-link" *ngIf="service.loggedIn == false; else elseBlock">Login</a>
-        <div #elseblock ngbDropdown>
-          <a class="nav-link" ngbDropdownToggle>Username</a>
+    <span class="navbar-text login-lg" [ngSwitch]="service.loggedIn">
+        <a class="nav-link" *ngSwitchCase="false" [routerLink]="['/login']">Login</a>
+        <div ngbDropdown *ngSwitchCase="true">
+          <a class="nav-link" ngbDropdownToggle>{{ username }}</a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Action</a>
-            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Another action</a>
-            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Something else here</a>
+            <a class="dropdown-item text-dark" [routerLink]="'/'+ service.loggedAs +'/'+ service.loggedAsId">Mi Perfil</a>
+            <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Editar Perfil</a>
+            <a class="dropdown-item text-danger" (click)="logOut()">Cerrar Sesion</a>
           </div>
         </div>
     </span>

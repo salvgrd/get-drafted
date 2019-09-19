@@ -34,6 +34,7 @@ export class LoginEmpresasComponent implements OnInit {
           alert(response['error']);
         } else {
           localStorage.setItem('token-sponsor', response['token']);
+          localStorage.setItem('user-id', response['userId']);
           this.router.navigate([`/sponsor/${response['userId']}`]);
         }
       })
