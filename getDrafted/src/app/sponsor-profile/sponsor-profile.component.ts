@@ -13,13 +13,20 @@ export class SponsorProfileComponent implements OnInit {
   editar: boolean = false;
   sponsor: any;
   sponsorEnviado: any;
-
+  owner: boolean;
   constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) {
+    this.owner = false;
     this.sponsor = {};
     this.sponsorEnviado = {};
    }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params =>{
+      let loggedId = this.atletasService.loggedAsId;
+      let usertype = this.atletasService.loggedAs;
+      let profileId = params.userid
+      if (loggedId == profileId && usertype == 'sponsor') this.owner = true;
+    })
     /* this.atletasService.getAtletaById()
     .then((response) => {
         this.atleta = response
@@ -80,26 +87,31 @@ export class SponsorProfileComponent implements OnInit {
   }
   onSubmit() {
     this.editar = !this.editar;
-    console.log('toy aqui');
-    console.log(this.formulario.controls)
-    
-    ////Me imagino que aqui seria un metodo de update haciendo la llamada
-    //// Y luego getSponsorById para que actualice perfil al pisar boton guardar
-    //// Si no me equivoco
-
-
-    /* this.atletasService.updateSponsor(this.formulario.value)
+    this.atletasService.updateSponsor(this.formulario.value)
       .then((response) => {
         if (response['error']) {
           alert(response['error']);
         } else {
           console.log(response);
-           alert('usuario actualizado.')
+          this.reloadUser();
+          this.atletasService.reloadVars();
+          alert('usuario actualizado.')
         }
       })
       .catch((err) => {
         console.log(err);
-      }) */
+      })
+  }
+  reloadUser() {
+    this.activatedRoute.params.subscribe(params => {
+      this.atletasService.getSponsorById(params.userid)
+        .then((response) => {
+          this.sponsor = response;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    });
   }
 
   //Esto es para activar los ngIF mosca cuando se pisa boton editar

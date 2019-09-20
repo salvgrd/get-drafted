@@ -17,8 +17,9 @@
         </div>
 
         <div class="col-4 opensans">
-            <input class="btn btn-danger mb-2" type="submit" value="Editar" (click)="editarAtleta()" *ngIf="!editar">
-
+            <div *ngIf="owner">
+                <input class="btn btn-danger mb-2" type="submit" value="Editar" (click)="editarAtleta()" *ngIf="!editar">
+            </div>
             <div>
                 <h2 class="ubuntu">{{atleta?.nombre}} {{atleta?.apellidos}}</h2>
                 <h6>ID: {{atleta?.id}}</h6>
@@ -79,7 +80,7 @@
 
         <div class="col-4 opensans">
             <!-- Falta disabled en boton de guardar mientras pruebo -->
-            <input type="submit" value="Guardar" class="btn btn-success btn-primary">
+            <input type="submit" value="Guardar" class="btn btn-success btn-primary" (click)="onSubmit()">
             <div class="row ubuntu mt-2">
                 <h3>Nombre: </h3>
                 <input formControlName="nombre" class="ml-auto opensans" type="text" placeholder="Nombre" >

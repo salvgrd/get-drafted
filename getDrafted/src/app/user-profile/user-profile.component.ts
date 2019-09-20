@@ -11,15 +11,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class UserProfileComponent implements OnInit {
   formulario: FormGroup;
   editar: boolean = false;
+  owner: boolean;
   atleta: any;
   atletaEnviado: any;
 
   constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) {
+    this.owner = false;
     this.atleta = {};
     this.atletaEnviado = {};
   }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params =>{
+      let loggedId = this.atletasService.loggedAsId;
+      let usertype = this.atletasService.loggedAs;
+      let profileId = params.userid
+      if (loggedId == profileId && usertype == 'atleta') this.owner = true;
+    })
     /* this.atletasService.getAtletaById()
     .then((response) => {
         this.atleta = response
@@ -95,26 +103,33 @@ export class UserProfileComponent implements OnInit {
   }
   onSubmit() {
     this.editar = !this.editar;
-    console.log('toy aqui');
-    console.log(this.formulario.controls)
-    
-    ////Me imagino que aqui seria un metodo de update haciendo la llamada
-    //// Y luego getAtletById para que actualice perfil al pisar boton guardar
-    //// Si no me equivoco
 
-
-    /* this.atletasService.updateAtleta(this.formulario.value)
+    this.atletasService.updateAtleta(this.formulario.value)
       .then((response) => {
         if (response['error']) {
           alert(response['error']);
         } else {
           console.log(response);
-           alert('usuario actualizado.')
+          this.reloadUser();
+          this.atletasService.reloadVars();
+          alert('usuario actualizado.')
         }
       })
       .catch((err) => {
         console.log(err);
-      }) */
+      })
+  }
+  
+  reloadUser() {
+    this.activatedRoute.params.subscribe(params => {
+      this.atletasService.getAtletaById(params.userid)
+        .then((response) => {
+          this.atleta = response;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    });
   }
 
   //Esto es para activar los ngIF mosca cuando se pisa boton editar

@@ -13,27 +13,7 @@ export class LandingComponent implements OnInit {
   constructor( private route: ActivatedRoute, private router: Router, public service: AtletasService ) { }
 
   ngOnInit() {
-    if (!this.service.loggedIn) return
-    if (this.service.loggedIn && this.service.loggedAs == 'atleta'){
-      this.service.getAtletaById(this.service.loggedAsId)
-      .then((response)=>{
-        this.usuario = response
-        this.username = this.usuario.nombre
-      })
-      .catch((err)=>{
-        console.log(err)
-      })
-    }
-    if (this.service.loggedIn && this.service.loggedAs == 'sponsor'){
-      this.service.getSponsorById(this.service.loggedAsId)
-      .then((response)=>{
-        this.usuario = response
-        this.username = this.usuario.nombre
-      })
-      .catch((err)=>{
-        console.log(err)
-      })
-    }
+    this.service.navbarGetter()
   }
   logOut(){
     localStorage.clear();

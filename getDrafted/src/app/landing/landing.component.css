@@ -86,3 +86,9 @@ div.container.imagen-seccion2{
 .lineatitulo{
     background-color: rgba(255, 255, 255, 0.5)
 }
+
+.fijar{
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}

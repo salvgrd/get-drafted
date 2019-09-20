@@ -17,7 +17,9 @@
         </div>
 
         <div class="col-4 opensans">
-            <input class="btn btn-danger mb-2" type="submit" value="Editar" (click)="editarAtleta()" *ngIf="!editar">
+            <div *ngIf="owner">
+                <input class="btn btn-danger mb-2" type="submit" value="Editar" (click)="editarAtleta()" *ngIf="!editar">
+            </div>
                 
             <div>
                 <h2 class="ubuntu">{{sponsor?.nombre}}</h2>
