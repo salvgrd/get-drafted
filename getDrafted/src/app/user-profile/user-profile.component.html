@@ -177,20 +177,6 @@
                         caracteres.
                 </p>
             </div>
-
-            <div class="row ubuntu mt-2">
-                <h5>Correo: </h5>
-                <input formControlName="correo" class="ml-auto opensans" type="text" placeholder="Correo">
-                <p class="error"
-                    *ngIf="formulario.controls['correo'].errors?.required && formulario.controls['correo'].touched">
-                    Este campo es requerido.
-                </p>
-                <p class="error"
-                    *ngIf="formulario.controls['correo'].errors?.pattern">
-                    Este email no es valido.
-                </p>
-            </div>
-
             <div class="row ubuntu mt-2">
                 <h5>Disciplina: </h5>
                 <select formControlName="disciplina" type="text" class="ml-auto opensans" placeholder="disciplina">
@@ -214,17 +200,6 @@
                     Este campo es requerido, por favor ingrese tiempo de experiencia.
                 </p>
             </div>
-
-
-            <div class="row ubuntu mt-2">
-                <h5>Sponsor: </h5>
-                <input formControlName="sponsor" class="ml-auto opensans" type="text" placeholder="Patrocinador" >
-                <p class="error"
-                    *ngIf="formulario.controls['sponsor'].errors?.required && formulario.controls['sponsor'].touched">
-                    Este campo es requerido.
-                </p>
-            </div>
-    
         </div>
 
         <div class="col-4 ubuntu">

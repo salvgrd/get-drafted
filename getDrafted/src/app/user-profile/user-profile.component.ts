@@ -57,10 +57,6 @@ export class UserProfileComponent implements OnInit {
       sexo: new FormControl(this.atleta.sexo, [
         Validators.required
       ]),
-      correo: new FormControl(this.atleta.correo, [
-        Validators.required,
-        Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
-      ]),
       telefono: new FormControl(this.atleta.telefono, [
         Validators.required,
         Validators.minLength(8),
@@ -78,10 +74,6 @@ export class UserProfileComponent implements OnInit {
       ]),
       experiencia: new FormControl(this.atleta.experiencia, [
         Validators.required
-      ]),
-      sponsor: new FormControl(this.atleta.sponsor, [
-        /* Validators.required */
-        /* me dijistes que todos tienen que se requeridos pero este no todos los atletas tienen */
       ]),
       marcas_personales: new FormControl(this.atleta.marcas_personales, [
         Validators.required
