@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<div class="container-fluid body-container pt-5 pb-5">
+<div class="container-fluid body-container pt-2 pb-5">
         <div class="col-12 centrar">
             <h4 class="font-weight-bold ubuntu">PERFIL</h4>
             <hr class="mb-2 lineatitulo">
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-            <!-- POSIBLES CAMBIOS EN GALERIA -->
+        <!-- POSIBLES CAMBIOS EN GALERIA -->
         <div class="col-3 container galeria">
                 
             <img src={{atleta?.galeria}} alt="">
@@ -70,7 +70,7 @@
 
 
 
-     <!-- PERFIL EDITABLE -->
+    <!-- PERFIL EDITABLE -->
     
     <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()" *ngIf="formulario">  
     <div class="row" *ngIf="editar">    
@@ -78,21 +78,18 @@
         </div>
 
         <div class="col-4 opensans">
-            <!-- Falta disable en boton de guardar mientras pruebo -->
+            <!-- Falta disabled en boton de guardar mientras pruebo -->
             <input type="submit" value="Guardar" class="btn btn-success btn-primary">
             <div class="row ubuntu mt-2">
                 <h3>Nombre: </h3>
-                <input formControlName="nombre" class="ml-auto opensans" type="text" placeholder="Nombre" required minlength="4">
+                <input formControlName="nombre" class="ml-auto opensans" type="text" placeholder="Nombre" >
                 <p class="error"
                     *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
                     El campo nombre es requerido.
                 </p>
-
                 <p class="error"
                     *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
-                    El campo nombre solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
-                    caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}}
-                    caracteres.
+                    El campo nombre solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}} caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}} caracteres.
                 </p>
                 <p class="error"
                     *ngIf="formulario.controls['nombre'].errors?.minlength && formulario.controls['nombre'].touched">
@@ -103,7 +100,7 @@
 
             <div class="row ubuntu mt-2">
                 <h3>Apellidos: </h3>
-                <input formControlName="apellidos" class="ml-auto opensans" type="text" placeholder="Apellidos">
+                <input formControlName="apellidos" class="ml-auto opensans" type="text" placeholder="Apellidos" >
                 <p class="error"
                     *ngIf="formulario.controls['apellidos'].errors?.required && formulario.controls['apellidos'].touched">
                     El campo Apellidos es requerido.
@@ -136,7 +133,7 @@
     
             <div class="row ubuntu mt-2">
                 <h5>Edad: </h5>
-                <input formControlName="edad" class="ml-auto opensans" type="text" placeholder="Edad">
+                <input formControlName="edad" class="ml-auto opensans" type="text" placeholder="Edad" >
                 <p class="error"
                     *ngIf="formulario.controls['edad'].errors?.edadvalidator && formulario.controls['edad'].touched">
                     No cumple con la edad minima (12).
@@ -162,7 +159,7 @@
 
             <div class="row ubuntu mt-2">
                 <h5>Telefono: </h5>
-                <input formControlName="telefono" class="ml-auto opensans" type="text" placeholder="Telefono">
+                <input formControlName="telefono" class="ml-auto opensans" type="text" placeholder="Telefono" >
                 <p class="error"
                     *ngIf="formulario.controls['telefono'].errors?.required && formulario.controls['telefono'].touched">
                     Este campo es requerido.
@@ -194,7 +191,7 @@
 
             <div class="row ubuntu mt-2">
                 <h5>Experiencia: </h5>
-                <input formControlName="experiencia" class="ml-auto opensans" type="text" placeholder="Experiencia" display="block">
+                <input formControlName="experiencia" class="ml-auto opensans" type="text" placeholder="Experiencia" >
                 <p class="error"
                     *ngIf="formulario.controls['experiencia'].errors?.required && formulario.controls['experiencia'].touched">
                     Este campo es requerido, por favor ingrese tiempo de experiencia.
@@ -218,7 +215,7 @@
         
             <div class="row ubuntu mt-2 ml-5">
                 <h5>Marcas Personales: </h5>
-                <input formControlName="marcas_personales" class="ml-auto opensans" type="text" placeholder="Marcas personales">
+                <input formControlName="marcas_personales" class="ml-auto opensans" type="text" placeholder="Marcas personales" >
                 <p class="error"
                     *ngIf="formulario.controls['marcas_personales'].errors?.required && formulario.controls['marcas_personales'].touched">
                     Este campo es requerido.
@@ -227,7 +224,7 @@
         
             <div class="ubuntu mt-2 ml-5">
                 <h5>Bio: </h5>
-                <textarea formControlName="bio" class="form-control opensans" type="text" placeholder="Ingresa tu biografia"  rows="9"></textarea>
+                <textarea formControlName="bio" class="form-control opensans" type="text" placeholder="Ingresa tu biografia"  rows="9" ></textarea>
                 <p class="error"
                     *ngIf="formulario.controls['bio'].errors?.required && formulario.controls['bio'].touched">
                     El campo Bio es requerido.
@@ -245,7 +242,8 @@
                 </p>
             </div>
         </div>
-
+        
+        <!-- POSIBLES CAMBIOS EN GALERIA -->
         <div class="col-3 container galeria">
             <div class="row ubuntu mt-2 ml-2">
                 <h5>Galeria (URL): </h5>
@@ -259,6 +257,5 @@
     </div> <!-- FINAL ROW EDITABLE -->
     </form>
 </div>
-
 
 <app-footer></app-footer>

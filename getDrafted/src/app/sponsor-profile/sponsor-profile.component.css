@@ -14,6 +14,7 @@ div.cover-usuario{
     background-position: center;
     height: 22vh;
 }
+
 .perfil-pic-container img{
     border-radius: 50%;
     position: relative;
@@ -26,7 +27,7 @@ div.cover-usuario{
 /* h3.nombre-perfil{
     display: inline-block;
     margin-left: 3vh;
-    color: black;
+    color: white;
 } */
 
 div.body-container{
@@ -53,9 +54,16 @@ div.centrar{
     text-align: center;
 }
 
-	/* color: #ffa600e3; */
-
+/* Beneficios */
+/* color: #ffa600e3; */
 
 .lineatitulo{
     background-color: rgba(255, 255, 255, 0.5)
 }
+
+.error{
+    color: red;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80%
+}
+

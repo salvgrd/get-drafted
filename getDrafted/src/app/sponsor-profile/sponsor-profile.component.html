@@ -1,43 +1,178 @@
 <app-header></app-header>
 <div class="container-fluid cover-usuario">
-    <div class="perfil-pic-container">
+    <div class="perfil-pic-container ubuntu">
         <img class="mt-5" src="https://everydaynutrition.co.uk/wp-content/uploads/2015/01/default-user-avatar.png" alt="Foto de perfil">
         <!-- <h3 class="nombre-perfil ubuntu">{{sponsor?.nombre}}</h3> -->
     </div>
 </div>
-<div class="container-fluid body-container pb-5">
-        <div class="row">
-            <div class="col-12 centrar mt-4">
-                <h4 class="font-weight-bold ubuntu">PERFIL</h4>
-                <hr class="mb-5 lineatitulo">
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-4 opensans">
-                <div class="row ubuntu">
-                    <h2>{{sponsor?.nombre}}</h2>
-                    <input class="btn btn-danger ml-3" type="submit" value="Editar">
-                </div>
-                <h6>ID: {{sponsor?.id}}</h6>
 
+<div class="container-fluid body-container pt-2 pb-5">        
+        <div class="col-12 centrar">
+            <h4 class="font-weight-bold ubuntu">PERFIL</h4>
+            <hr class="mb-2 lineatitulo">
+        </div>
+
+    <div class="row" *ngIf="!editar">
+        <div class="col-1">
+        </div>
+
+        <div class="col-4 opensans">
+            <input class="btn btn-danger mb-2" type="submit" value="Editar" (click)="editarAtleta()" *ngIf="!editar">
+                
+            <div>
+                <h2 class="ubuntu">{{sponsor?.nombre}}</h2>
+                <h6>ID: {{sponsor?.id}}</h6>
                 <h6 class="mb-5">Ubicación: {{sponsor?.ubicacion}}</h6>
                 <h6>Telefono: {{sponsor?.telefono}}</h6>
                 <h6>Correo: {{sponsor?.correo}}</h6>
                 <h6>Disciplina: {{sponsor?.disciplinas_patrocinio}}</h6>
-
-                <h6>Bio: {{sponsor?.bio}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio? Laborum placeat natus debitis voluptatem excepturi, necessitatibus consequatur? Natus eos corporis repellendus voluptas iusto, perferendis sapiente itaque laboriosam temporibus debitis?</h6>
+                <h6>Bio: {{sponsor?.bio}}</h6>
             </div>
-            <div class="col-4 centrar ubuntu">
-                <h4 class="mt-3 mb-4">Beneficios</h4>
+
+        </div>
+
+        <div class="col-4 centrar ubuntu">
+            <h4 class="mt-3 mb-4">Beneficios</h4>
                 
                 <!-- POR HACER -->
 
+        </div>
+
+        <!-- POSIBLES CAMBIOS EN GALERIA -->
+        <div class="col-3 container galeria">
+                
+            <img src={{sponsor?.galeria}} alt="">
+                
+        </div>
+    </div> <!-- FINAL ROW PERFIL -->
+
+    <!-- PERFIL EDITABLE -->
+
+    <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()" *ngIf="formulario">  
+    <div class="row" *ngIf="editar">    
+        <div class="col-1"> 
+        </div>
+
+        <div class="col-4 opensans">
+            <!-- Falta disabled en boton de guardar mientras pruebo -->
+            <input type="submit" value="Guardar" class="btn btn-success btn-primary">
+            <div class="row ubuntu mt-2">
+                <h3>Nombre: </h3>
+                <input formControlName="nombre" class="ml-auto opensans" type="text" placeholder="Nombre" required minlength="4">
+                <p class="error"
+                    *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
+                    El campo nombre es requerido.
+                </p>
+                <p class="error"
+                    *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
+                    El campo nombre solo puede tener como máximo {{formulario.controls['nombre'].errors?.maxlength.requiredLength}} caracteres. Tú has insertado {{formulario.controls['nombre'].errors?.maxlength.actualLength}} caracteres.
+                </p>
+                <p class="error"
+                    *ngIf="formulario.controls['nombre'].errors?.minlength && formulario.controls['nombre'].touched">
+                    El campo nombre necesita como minimo {{formulario.controls['nombre'].errors?.minlength.requiredLength}} caracteres.
+                </p>        
             </div>
-            <div class="container galeria col-3">
-                
-                <img src={{sponsor?.galeria}} alt="">
-                
+
+            <div class="row ubuntu mt-4">
+                <h5>Ubicación: </h5>
+                <select formControlName="ubicacion" type="text" class="ml-auto opensans">
+                    <option value="España">España</option>
+                    <option value="USA">EE.UU</option>
+                    <option value="Venezuela">Venezuela</option>
+                </select>
+                <p class="error"
+                    *ngIf="formulario.controls['ubicacion'].errors?.required && formulario.controls['ubicacion'].touched">
+                    Por favor seleccione una opcion.
+                </p>
+            </div>
+
+            <div class="row ubuntu mt-2">
+                <h5>Telefono: </h5>
+                <input formControlName="telefono" class="ml-auto opensans" type="text" placeholder="Telefono">
+                <p class="error"
+                    *ngIf="formulario.controls['telefono'].errors?.required && formulario.controls['telefono'].touched">
+                    Este campo es requerido.
+                </p>    
+                <p class="error"
+                    *ngIf="formulario.controls['telefono'].errors?.maxlength && formulario.controls['telefono'].touched">
+                    El campo telefono solo puede tener como máximo {{formulario.controls['telefono'].errors.maxlength.requiredLength}} caracteres. Tú has insertado {{formulario.controls['telefono'].errors?.maxlength.actualLength}} caracteres.
+                </p>
+                <p class="error"
+                    *ngIf="formulario.controls['telefono'].errors?.minlength && formulario.controls['telefono'].touched">
+                    El campo telefono necesita como minimo {{formulario.controls['telefono'].errors?.minlength.requiredLength}}caracteres.
+                </p>
+            </div>
+
+            <div class="row ubuntu mt-2">
+                <h5>Disciplina: </h5>
+                <select formControlName="disciplina" type="text" class="ml-auto opensans" placeholder="disciplina">
+                    <option value="Ciclismo">Ciclismo</option>
+                    <option value="CrossFit">CrossFit</option>
+                    <option value="Halterofilia">Halterofilia</option>
+                    <option value="Natacion">Natación</option>
+                </select>
+                <p class="error"
+                    *ngIf="formulario.controls['disciplina'].errors?.required && formulario.controls['disciplina'].touched">
+                    Por favor seleccione una opcion.
+                </p>
             </div>
         </div>
+
+        <div class="col-4 ubuntu">
+            <!-- CAMBIO DE PASSWORD EN PRUEBA CAPAZ QUITAR //SIN PASSWORD REPEAT-->
+                            
+            <!-- <div class="row ubuntu mt-2 ml-5 mb-5">
+                <h5>Password: </h5>
+                <input value="password" class="ml-auto opensans" type="password" placeholder="Password">
+            </div>
+            <div class="row ubuntu mt-2 ml-5 mb-5">
+                <h5>Password Repeat: </h5>
+                <input value="password" class="ml-auto opensans" type="password" placeholder="Repite la Password">              
+            </div> -->
+            
+            <!-- {{atleta.marcas_personales}} -->
+            
+            <div class="row ubuntu mt-2 ml-5">
+                <h5>Beneficios: </h5>
+                <input formControlName="beneficios" class="ml-auto opensans" type="text" placeholder="Beneficios">
+                <p class="error"
+                    *ngIf="formulario.controls['beneficios'].errors?.required && formulario.controls['beneficios'].touched">
+                    Este campo es requerido.
+                </p>
+            </div>
+            
+            <div class="ubuntu mt-2 ml-5">
+                <h5>Bio: </h5>
+                <textarea formControlName="bio" class="form-control opensans" type="text" placeholder="Ingresa tu biografia"  rows="9"></textarea>
+                <p class="error"
+                    *ngIf="formulario.controls['bio'].errors?.required && formulario.controls['bio'].touched">
+                    El campo Bio es requerido.
+                </p>
+                <p class="error"
+                    *ngIf="formulario.controls['bio'].errors?.maxlength && formulario.controls['bio'].touched">
+                    El campo Bio solo puede tener como máximo {{formulario.controls['bio'].errors?.maxlength.requiredLength}}caracteres. Tú has insertado {{formulario.controls['bio'].errors?.maxlength.actualLength}} caracteres.
+                </p>
+                <p class="error"
+                    *ngIf="formulario.controls['bio'].errors?.minlength && formulario.controls['bio'].touched">
+                    El campo B  io necesita como minimo {{formulario.controls['bio'].errors?.minlength.requiredLength}} caracteres.
+                </p>
+            </div>
+        </div>
+
+        <!-- POSIBLES CAMBIOS EN GALERIA -->
+        <div class="col-3 container galeria">
+            <div class="row ubuntu mt-2 ml-2">
+                <h5>Galeria (URL): </h5>
+                <textarea formControlName="galeria" class="form-control opensans" type="text" placeholder="Ingresa Url de la imagen" rows="4"></textarea>
+                <p class="error"
+                    *ngIf="formulario.controls['galeria'].errors?.required && formulario.controls['galeria'].touched">
+                    Este campo es requerido.
+                </p>
+            </div>
+        </div>
+
+    </div> <!-- FINAL ROW EDITABLE -->
+    </form>
+
 </div>
 <app-footer></app-footer>

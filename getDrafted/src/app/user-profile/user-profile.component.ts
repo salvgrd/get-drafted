@@ -3,7 +3,6 @@ import { AtletasService } from '../atletas.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -18,8 +17,6 @@ export class UserProfileComponent implements OnInit {
   constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) {
     this.atleta = {};
     this.atletaEnviado = {};
-
-    
   }
 
   ngOnInit() {
