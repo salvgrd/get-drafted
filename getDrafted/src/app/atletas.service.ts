@@ -12,16 +12,48 @@ export class AtletasService {
   loggedAs: string;
   loggedAsId: string;
   loggedIn: boolean;
+  user: any;
+  username: string;
   constructor(private http: HttpClient) { 
     this.baseUrl = "http://localhost:3000/api/";
     this.loggedAs = this.readLoggedAs();
     this.loggedIn = this.isLoggedIn();
     this.loggedAsId = localStorage.getItem('user-id')
   }
+  // reloader
+  reloadVars(){
+    this.loggedAs = this.readLoggedAs();
+    this.loggedIn = this.isLoggedIn();
+    this.loggedAsId = localStorage.getItem('user-id')
+    this.navbarGetter();
+  }
   // Status de loggin
   isLoggedIn(){
     if (localStorage.length != 0) return true;
     return false;
+  }
+  navbarGetter(){
+    if (!this.loggedIn) return
+    if (this.loggedIn && this.loggedAs == 'atleta'){
+      this.getAtletaById(this.loggedAsId)
+      .then((response)=>{
+        this.user = response
+        this.username = this.user.nombre
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    }
+    if (this.loggedIn && this.loggedAs == 'sponsor'){
+      this.getSponsorById(this.loggedAsId)
+      .then((response)=>{
+        this.user = response
+        this.username = this.user.nombre
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    }
   }
   readLoggedAs(){
     if (localStorage.getItem('token-atleta') != null) return 'atleta'; 
@@ -78,10 +110,16 @@ export class AtletasService {
     return response;
   }
   ////////////////////////////////////////////////////////////////REVISAR LLAMADA CON BACK
-  /* updateAtleta(pId) {
+  updateAtleta(pForm) {
+    pForm.userId = localStorage.getItem('user-id');  
     let httpOptions = this.setHeaders()
-    let response = this.http.post(`${this.baseUrl}atletas/update/${pId}?format=json`, pId, httpOptions).toPromise();
+    let response = this.http.post(`${this.baseUrl}atletas/update?format=json`, pForm, httpOptions).toPromise();
     return response;
-  } */
-
+    }
+  updateSponsor(pForm) {
+    pForm.userId = localStorage.getItem('user-id');  
+    let httpOptions = this.setHeaders()
+    let response = this.http.post(`${this.baseUrl}empresas/update?format=json`, pForm, httpOptions).toPromise();
+    return response;
+    }
 }

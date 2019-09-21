@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { AtletasService } from '../atletas.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -35,6 +35,7 @@ export class LoginFormComponent implements OnInit {
         } else {
           localStorage.setItem('token-atleta', response['token']);
           localStorage.setItem('user-id', response['userId']);
+          this.atletasService.reloadVars();
           this.router.navigate([`/atleta/${response['userId']}`]);
         }
       })

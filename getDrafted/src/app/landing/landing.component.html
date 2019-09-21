@@ -1,4 +1,4 @@
-<header>
+<header class="fijar">
   <nav class="navbar sticky-top navbar-expand-lg py-0 navbar-dark bg-dark ubuntu">
     <a class="navbar-brand" href="#">GetDrafted</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
     <span class="navbar-text login-lg" [ngSwitch]="service.loggedIn">
         <a class="nav-link" *ngSwitchCase="false" [routerLink]="['/login']">Login</a>
         <div ngbDropdown *ngSwitchCase="true">
-            <a class="nav-link" ngbDropdownToggle>{{ username }}</a>
+            <a class="nav-link" ngbDropdownToggle>{{ service.username }}</a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item text-dark" [routerLink]="'/'+ service.loggedAs +'/'+ service.loggedAsId">Mi Perfil</a>
               <a class="dropdown-item text-dark" href="#" (click)="$event.preventDefault()">Editar Perfil</a>

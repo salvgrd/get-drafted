@@ -35,6 +35,7 @@ export class LoginEmpresasComponent implements OnInit {
         } else {
           localStorage.setItem('token-sponsor', response['token']);
           localStorage.setItem('user-id', response['userId']);
+          this.atletasService.reloadVars();
           this.router.navigate([`/sponsor/${response['userId']}`]);
         }
       })
