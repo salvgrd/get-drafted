@@ -14,11 +14,25 @@ export class UserProfileComponent implements OnInit {
   owner: boolean;
   atleta: any;
   atletaEnviado: any;
+  marcas: any;
 
   constructor(private atletasService: AtletasService, private activatedRoute: ActivatedRoute) {
     this.owner = false;
     this.atleta = {};
     this.atletaEnviado = {};
+    this.marcas = { 
+      'arrancada': 0, 
+      'dos_tiempos': 0,
+      'sentadilla': 0,
+      'fran': 0,
+      'grace': 0,
+      'murph': 0,
+      't50m': 0,
+      't100m': 0,
+      't200m': 0,
+      't400m': 0,
+      't800m': 0,
+      }
   }
 
   ngOnInit() {
@@ -39,6 +53,7 @@ export class UserProfileComponent implements OnInit {
         this.atletasService.getAtletaById(params.userid)
           .then((response) => {
             this.atleta = response;
+            if(this.atleta.marcas_personales != "") this.marcas = JSON.parse(this.atleta.marcas_personales);
              this.createForm();
           })
           .catch((err) => {
@@ -103,7 +118,6 @@ export class UserProfileComponent implements OnInit {
   }
   onSubmit() {
     this.editar = !this.editar;
-
     this.atletasService.updateAtleta(this.formulario.value)
       .then((response) => {
         if (response['error']) {
@@ -125,6 +139,7 @@ export class UserProfileComponent implements OnInit {
       this.atletasService.getAtletaById(params.userid)
         .then((response) => {
           this.atleta = response;
+          if(this.atleta.marcas_personales != "") this.marcas = JSON.parse(this.atleta.marcas_personales);
         })
         .catch((err) => {
           console.log(err);

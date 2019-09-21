@@ -36,31 +36,63 @@
 
         </div>
 
-        <div class="col-4 ubuntu">
-            <div class="centrar">
+        <div class="col-4 ubuntu" [ngSwitch]="atleta.disciplina">
+
+            <!-- CREAR UN SWITCHCASE PARA CADA DISCIPLINA -->
+
+            <div class="centrar" *ngSwitchCase="'Halterofilia'">
                 <h4 class="mt-3 mb-4 centrar">Marcas Personales</h4>
-                <!-- {{atleta.marcas_personales}} -->
-                
                 <div class="v-marca mb-4">
-                    <div class="count-number-no">
-                        <span>{{atleta?.marcas_personales}}</span>
-                    </div>
                     <div class="count-divider"><span style="width: 50px;"></span></div>
-                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Peso Muerto</h6>
+                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Arrancada</h6>
                 </div>
                 <div class="v-marca mb-4">
-                    <div class="count-number-no ">0 Kg</div>
+                    <div class="count-number-no ">{{ marcas.arrancada }} Kg</div>
                     <div class="count-divider "><span style="width: 50px;"></span></div>
-                    <h6 class="v-marca-text " style="opacity: 1; bottom: 0px;">Peso Muerto</h6>
+                    <h6 class="v-marca-text " style="opacity: 1; bottom: 0px;">Dos Tiempos</h6>
                 </div>
                 <div class="v-marca mb-4">
-                    <div class="count-number-no">00:00</div>
+                    <div class="count-number-no">{{ marcas.dos_tiempos }} Kg</div>
                     <div class="count-divider"><span style="width: 50px;"></span></div>
-                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Run 5K</h6>
                 </div>
             </div>
-        </div>
 
+            <div class="centrar" *ngSwitchCase="'CrossFit'">
+                <h4 class="mt-3 mb-4 centrar">Marcas Personales</h4>
+                <div class="v-marca mb-4">
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">Fran</h6>
+                </div>
+                <div class="v-marca mb-4">
+                    <div class="count-number-no ">{{ marcas.fran }}</div>
+                    <div class="count-divider "><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text " style="opacity: 1; bottom: 0px;">Grace</h6>
+                </div>
+                <div class="v-marca mb-4">
+                    <div class="count-number-no">{{ marcas.grace }}</div>
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                </div>
+            </div>
+
+            <div class="centrar" *ngSwitchCase="'Natacion'">
+                <h4 class="mt-3 mb-4 centrar">Marcas Personales</h4>
+                <div class="v-marca mb-4">
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text" style="opacity: 1; bottom: 0px;">50m</h6>
+                </div>
+                <div class="v-marca mb-4">
+                    <div class="count-number-no ">{{ marcas.t50m }}</div>
+                    <div class="count-divider "><span style="width: 50px;"></span></div>
+                    <h6 class="v-marca-text " style="opacity: 1; bottom: 0px;">100m</h6>
+                </div>
+                <div class="v-marca mb-4">
+                    <div class="count-number-no">{{ marcas.t100m }}</div>
+                    <div class="count-divider"><span style="width: 50px;"></span></div>
+                </div>
+            </div>
+
+        </div>
+        
         <!-- POSIBLES CAMBIOS EN GALERIA -->
         <div class="col-3 container galeria">
                 
