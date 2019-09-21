@@ -61,7 +61,7 @@ export class SponsorProfileComponent implements OnInit {
         Validators.minLength(8),
         Validators.maxLength(12)
       ]),
-      disciplina: new FormControl(this.sponsor.disciplina, [
+      disciplinas_patrocinio: new FormControl(this.sponsor.disciplinas_patrocinio, [
         Validators.required
       ]),
       bio: new FormControl(this.sponsor.bio, [
@@ -92,10 +92,8 @@ export class SponsorProfileComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
-          console.log(response);
           this.reloadUser();
           this.atletasService.reloadVars();
-          alert('usuario actualizado.')
         }
       })
       .catch((err) => {

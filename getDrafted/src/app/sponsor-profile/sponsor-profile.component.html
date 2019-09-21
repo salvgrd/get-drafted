@@ -107,14 +107,14 @@
 
             <div class="row ubuntu mt-2">
                 <h5>Disciplina: </h5>
-                <select formControlName="disciplina" type="text" class="ml-auto opensans" placeholder="disciplina">
+                <select formControlName="disciplinas_patrocinio" type="text" class="ml-auto opensans" placeholder="disciplinas_patrocinio">
                     <option value="Ciclismo">Ciclismo</option>
                     <option value="CrossFit">CrossFit</option>
                     <option value="Halterofilia">Halterofilia</option>
                     <option value="Natacion">Natación</option>
                 </select>
                 <p class="error"
-                    *ngIf="formulario.controls['disciplina'].errors?.required && formulario.controls['disciplina'].touched">
+                    *ngIf="formulario.controls['disciplinas_patrocinio'].errors?.required && formulario.controls['disciplinas_patrocinio'].touched">
                     Por favor seleccione una opcion.
                 </p>
             </div>

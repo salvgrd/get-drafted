@@ -123,10 +123,8 @@ export class UserProfileComponent implements OnInit {
         if (response['error']) {
           alert(response['error']);
         } else {
-          console.log(response);
           this.reloadUser();
           this.atletasService.reloadVars();
-          alert('usuario actualizado.')
         }
       })
       .catch((err) => {
