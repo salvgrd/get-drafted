@@ -31,7 +31,7 @@ div.cover-usuario{
 } */
 
 div.body-container{
-    height: auto;
+    height: 62.5vh;
     width: 100%;
     background-color: whitesmoke;
 }

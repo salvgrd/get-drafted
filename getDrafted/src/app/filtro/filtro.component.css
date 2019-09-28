@@ -1,4 +1,3 @@
-
 .ubuntu{
   font-family: 'Ubuntu';
 }
@@ -12,7 +11,9 @@
   padding-top: 3%;
   padding-bottom: 6%;
 }
-
+.results{
+  height: 36vh;
+}
 .userbox{
   background: rgba(0,0,0,0.5);
   color: white;

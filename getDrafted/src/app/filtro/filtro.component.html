@@ -42,7 +42,6 @@
                         </select>
                     </div>
                     <div>
-                            <!-- [disabled]="!formulario.valid -->
                         <button type="submit" class="btn btn-primary mt-3 btn-block">Buscar</button>
                     </div>
                 </div>
@@ -79,7 +78,10 @@
             </form>
         </div>
         <div class="col-9 mt-3 opensans">
-            <div class="container" *ngIf="show == 'atleta'">
+            <div class="container results" *ngIf="arrUserShowList.length == 0">
+                <p>No se han encontrado resultados.</p>
+            </div>
+            <div class="container results" *ngIf="show == 'atleta'">
                 <div class="py-2 my-1 border userbox text-left pl-4" [routerLink]="['/atleta', user.id]" *ngFor="let user of arrUserShowList">
                     <h4>{{user.apellidos}}, {{user.nombre}}</h4>
                     <hr class="lineatitulo">
@@ -87,7 +89,7 @@
                     <p>Sexo: {{user.sexo == 'M' ? 'Masculino' : 'Femenino'}} &nbsp; &nbsp; Edad: {{user.edad}} años</p>
                 </div>
             </div>
-            <div class="container" *ngIf="show == 'sponsor'">
+            <div class="container results" *ngIf="show == 'sponsor'">
                 <div class="py-2 my-1 border userbox text-left pl-4" [routerLink]="['/sponsor', user.id]" *ngFor="let user of arrUserShowList">
                         <h4>{{user.nombre}}</h4>
                         <hr class="lineatitulo">

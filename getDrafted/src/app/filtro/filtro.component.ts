@@ -17,6 +17,7 @@ export class FiltroComponent implements OnInit {
   arrUserShowList: any;
 
   constructor( private atletasService: AtletasService, private router: Router) {
+    this.arrUserShowList = [];
     this.filtersAtletas = new FormGroup({
       nombre: new FormControl ('', []),
       pais: new FormControl ('', []),

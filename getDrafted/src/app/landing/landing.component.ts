@@ -17,7 +17,7 @@ export class LandingComponent implements OnInit {
   }
   logOut(){
     localStorage.clear();
-    this.router.navigate(['/landing']);
+    this.service.reloadVars();
   }
   onAnchorClick ( ) {
     this.route.fragment.subscribe ( f => {
